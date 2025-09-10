@@ -1,0 +1,130 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+
+.calendar{
+position: absolute;
+width: 60%;
+bottom: 10%;
+left: 50%;
+transform: translate(-50%,-50%);
+color: #fff;
+border: 1px solid red;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+padding: 10px 10px 10px 40px;
+align-items: center;
+gap: 72px;
+align-self: stretch;
+z-index: 1;
+border-radius: 50px;
+border: 1px solid #D8D8D8;
+background: #FFF;
+box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.calendar_item{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:nth-of-type(3){
+        justify-content: space-between;
+    }
+
+    &:nth-of-type(2){
+      
+        &::before{
+            content: '';
+            top: 50%;
+            transform: translate(-50%,-50%);
+            left: 25%;
+            display: block;
+            position: absolute;
+            background-color:#D8D8D8 ;
+            width: 1px;
+            height: 50%;
+        }
+
+        &::after{
+            content: '';
+            top: 50%;
+            transform: translate(-50%,-50%);
+            right: 50%;
+            display: block;
+            position: absolute;
+            background-color:#D8D8D8 ;
+            width: 1px;
+            height: 50%;
+        }
+        
+    }
+  
+}
+
+.calednar_item_container{
+
+}
+.calendar_item_text{
+    color: v.$text-color;
+   font-size: 14px;
+font-style: normal;
+font-weight: 400;
+}
+
+.calendar_item_text_span{
+    color: v.$text-color;
+}
+.calendar_item_text_p{
+    color: #5E5E5E;
+}
+
+.icon{
+    margin-left: 16px;
+}
+.popup {
+  position: absolute;
+  bottom: 100%; // nad elementem
+
+  transform: translateY(-10px);
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  padding: 16px;
+  z-index: 10;
+  min-width: 250px;
+    &::after {
+    content: "";
+    position: absolute;
+    top: 100%; // na dole popupu
+    left: 40px; // możesz wyregulować żeby wskazywał na środek elementu
+    border-width: 8px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent; // biały trójkąt
+  }
+}
+.popup_arival{
+  left: 0;
+}
+.popup_decapture{
+  left: 25%;
+}
+
+
+.people_count{
+    font-size: 24px;
+    margin: 0 8px;
+       width: 25px;
+}
+.people_counter{
+    color: #000;
+    display: flex;
+    align-items: center;
+ 
+  
+}
+.people_plus , .people_minus {
+    cursor: pointer;
+    display: block;
+    padding: 4px;
+   
+}

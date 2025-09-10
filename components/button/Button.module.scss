@@ -1,0 +1,63 @@
+@use "../../styles/_variables.scss" as v;
+.small{
+  font-size: 12px;
+
+  padding: 7px 16px;
+}
+.medium{
+  font-size: 14px;
+
+  padding: 9px 16px;
+}
+.large{
+  font-size: 16px;
+
+  padding:  13px 20px ; 
+}
+.a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  font-family: Inter,sans-serif;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: background-color ease-in-out 0.3s;
+}
+.primary{
+  background-color: v.$primary;
+  color: #ffffff;
+  &:hover{
+    background-color: v.$primary-light;
+  }
+}
+.secondary{
+  background-color: v.$secondary;
+   color: #ffffff;
+  &:hover{
+    background-color: v.$secondary-light;
+  }
+}
+.white{
+  background-color: #ffffff;
+  color: #111418;
+
+}
+
+.rounded{
+  border-radius: 50px;
+}
+.a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  
+}
+.img{
+  margin-left: 8px;
+}

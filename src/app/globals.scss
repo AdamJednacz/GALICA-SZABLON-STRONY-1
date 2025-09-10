@@ -1,0 +1,39 @@
+@use "styles/_all.scss";
+@use "styles/_mixins.scss" as m;
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    
+}
+
+body{
+    background-color: #ededed;
+}
+
+h2{
+    font-size: 32px;
+    @include m.desktop{
+        font-size: 48px;
+    }
+}
+p{
+    font-size: 14px;
+    @include m.desktop {
+        font-size: 16px;
+    }
+}
+
+*:focus {
+    outline: grey solid 2px;
+}
+a:focus{
+     outline: grey solid 2px;
+}
+.lazy-load-image-background{
+    @include m.desktop{
+width:50%;
+    }
+
+   
+}
