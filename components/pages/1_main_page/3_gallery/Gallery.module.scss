@@ -1,0 +1,80 @@
+
+@use "styles/_mixins.scss" as m;
+.gallery{
+    margin: 32px 0;
+    @include m.desktop{
+ margin: 64px 0;
+    }
+   
+}
+.gallery_container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  @include m.desktop{
+grid-template-columns: repeat(6, 1fr); 
+  }
+  @include m.tablet{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+}
+@include m.desktop{
+.gallery_container .image:nth-child(1),
+.gallery_container .image:nth-child(2),
+.gallery_container .image:nth-child(3) {
+  grid-column: span 2;
+}
+
+/* 2 rząd = 2 zdjęcia (każde 3 kolumny = 50%) */
+.gallery_container .image:nth-child(4),
+.gallery_container .image:nth-child(5) {
+  grid-column: span 3;
+}
+
+/* 3 rząd = 3 zdjęcia (znowu po 2 kolumny) */
+.gallery_container .image:nth-child(6),
+.gallery_container .image:nth-child(7),
+.gallery_container .image:nth-child(8) {
+  grid-column: span 2;
+}
+}
+/* 1 rząd = 3 zdjęcia (każde 2 kolumny) */
+
+.image{
+       
+    width: 100%;
+    position: relative;
+   
+    height: 35svh;
+    z-index: 1;
+        transition: 0.5 ease-in-out all;
+
+
+        
+    @include m.desktop{
+        height: 50svh;
+           max-width: 800px;
+        
+
+    }
+//      &::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: transparent; /* startowy */
+//     z-index: 2;
+//     transition: background-color 0.5s ease-in-out; /* ✅ poprawny zapis */
+//   }
+
+//   &:hover::before {
+//     content: "Zobacz więcej ";
+//     color: #fff;
+//     background-color: rgba(0,0,0,0.5); /* overlay przy hover */
+    
+//   }
+ 
+  
+}

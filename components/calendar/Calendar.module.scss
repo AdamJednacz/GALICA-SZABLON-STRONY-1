@@ -2,6 +2,8 @@
 @use "../../styles/variables" as v;
 
 .calendar{
+    display: none;
+    @include m.desktop{
 position: absolute;
 width: 60%;
 bottom: 10%;
@@ -20,12 +22,16 @@ border-radius: 50px;
 border: 1px solid #D8D8D8;
 background: #FFF;
 box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    }
+
 }
 
 .calendar_item{
     display: flex;
     align-items: center;
     cursor: pointer;
+    justify-content: space-between;
+    
     &:nth-of-type(3){
         justify-content: space-between;
     }
@@ -75,6 +81,7 @@ font-weight: 400;
 }
 .calendar_item_text_p{
     color: #5E5E5E;
+
 }
 
 .icon{

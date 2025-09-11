@@ -4,11 +4,9 @@
 
 .footer {
   background-color: v.$secondary;
-  padding: 60px  0;
-  margin-top: 16px;
-  @include m.desktop{
-    margin-top: 128px;
-  }
+  padding: 60px  0 0 0;
+
+
 }
 
 
@@ -23,12 +21,12 @@
   margin-bottom: 32px;
 
 }
+
 .footer_navi {
   display: grid;
   gap: 32px;
   color: #fff;
   font-weight: 300;
-
   padding-bottom: 60px;
   grid-template-columns: repeat(1, 1fr); // mobile
   grid-auto-rows: min-content; // wysokość wiersza dopasowana do zawartości
