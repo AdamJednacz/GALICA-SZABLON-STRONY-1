@@ -30,13 +30,14 @@ img{
 
 h1,h2,h3,h4,h5,h6,p,label{
   line-height: 150%;
-  color: variables.$text-color;
+  
 }
 h1{
   font-size: 48px;
 }
 h2{
   font-size: 32px;
+  font-weight: 500;
 }
 h3{
   font-size: 26px;

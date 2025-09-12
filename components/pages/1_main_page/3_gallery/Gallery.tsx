@@ -1,6 +1,8 @@
+
+import GalleryComponent, { GalleryItem } from "../../../gallery_component/GalleryComponent"
 import styles from "./Gallery.module.scss"
-import Image from "next/image"
-const data = [
+
+const images :GalleryItem[] = [
     {
         src:'/gallery_1.jpg',
         alt:'Zdjęcie pokoju 1'
@@ -39,16 +41,13 @@ const data = [
 const Gallery = () => {
   return (
     <section className={styles.gallery}>
-        <div className={`container ${styles.gallery_container}`}>
-            {
-                data.map((item ,index)=>(
-                    <div key={index} className={styles.image}>
-                    <Image objectFit="cover" fill key={index} src={item.src} alt={item.alt}/>
-                    </div>
-                ))
-
-            }
-        </div>
+  
+<GalleryComponent
+  images={images}
+  buttonText="Zobacz więcej"
+  buttonLink="/galeria"
+  buttonColor="secondary"
+/>
     </section>
   )
 }

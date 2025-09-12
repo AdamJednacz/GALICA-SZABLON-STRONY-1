@@ -1,7 +1,7 @@
 
 import styles from "./Button.module.scss";
 import React from "react";
-
+import Image from "next/image";
 export interface ButtonProps {
   children: React.ReactNode;
   type?: "button" | "submit" | "reset";
@@ -28,7 +28,7 @@ const Button: React.FC<ButtonProps> = ({
   const content = (
     <>
       {children}
-      {icon && <img className={styles.img} src={icon} alt="button icon" />}
+      {icon && <Image width={24} height={ 24} className={styles.img} src={icon} alt="button icon" />}
     </>
   );
 

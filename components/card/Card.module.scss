@@ -1,0 +1,77 @@
+@use "styles/_mixins.scss" as m;
+.card_container{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    //   flex-direction: column-reverse;
+   
+    justify-content: center;
+    gap: 32px;
+      width: 100%;
+   
+      align-items: stretch;
+      align-items: center;
+      @include m.desktop{
+   padding:32px ;
+      }
+}
+
+.card_container_row{
+  @include m.desktop{
+        flex-wrap: nowrap;
+          flex-direction: row;
+             justify-content: space-between;
+    }
+}
+.card_container_row_reverse{
+  @include m.desktop{
+        flex-wrap: nowrap;
+          flex-direction: row-reverse;
+             justify-content: space-between;
+    }
+}
+
+.image{
+    width: 100%;
+  
+    position: relative;
+    max-width: 500px;
+    height: 35svh;
+   
+    @include m.desktop{
+      height: stretch;
+      max-width: 60%;
+     flex: 1 0 0;
+align-self: stretch;
+     
+
+    }
+  
+}
+.card_text{
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap:32px;
+    @include m.desktop{
+           gap: 48px;
+    align-items: flex-start;
+    text-align: left; 
+    }
+    @media (max-width:1130px) {
+           align-items: center;
+    text-align: center;
+    }
+    @include m.tablet{
+      
+    }
+}
+
+.card_list{
+    display: flex;
+    flex-direction: column;
+    list-style: inside;
+    margin-left: 16px;
+    gap: 8px;
+}

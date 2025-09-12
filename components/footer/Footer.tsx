@@ -1,51 +1,54 @@
 import styles from "./Footer.module.scss";
+import Image from "next/image";
+import Link from "next/link"; // 🔹 import Link
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className="container">
-        <a href="/" className={styles.logo}>
-          <img
+        <Link href="/" className={styles.logo}>
+          <Image
             loading="lazy"
             style={{ marginRight: "8px" }}
             src="/GALICA.png"
             alt="logo"
+            width={120}
+            height={40}
           />
-        
-        </a>
+        </Link>
 
         <div className={styles.footer_navi}>
           <div className={styles.footer_col}>
-            <a href="/" className={styles.link}>Strona Główna</a>
+            <Link href="/" className={styles.link}>Strona Główna</Link>
           </div>
 
           <div className={styles.footer_col}>
-            <a href="#offer" className={styles.link}>Oferta</a>
-            <a href="/zdalna-recepcja" className={styles.link}>Zdalna recepcja</a>
-            <a href="/strony-internetowe" className={styles.link}>Strony internetowe</a>
-            <a href="/zarzadzanie-zyskiem" className={styles.link}>Zarządzanie zyskiem</a>
-            <a href="/oprogramowanie" className={styles.link}>Silniki rezerwacyjne</a>
-            <a href="/oprogramowanie" className={styles.link}>Oprogramowanie</a>
-            <a href="/uslugi-graficzne" className={styles.link}>Projektowanie graficzne</a>
+            <Link href="#offer" className={styles.link}>Oferta</Link>
+            <Link href="/zdalna-recepcja" className={styles.link}>Zdalna recepcja</Link>
+            <Link href="/strony-internetowe" className={styles.link}>Strony internetowe</Link>
+            <Link href="/zarzadzanie-zyskiem" className={styles.link}>Zarządzanie zyskiem</Link>
+            <Link href="/oprogramowanie" className={styles.link}>Silniki rezerwacyjne</Link>
+            <Link href="/oprogramowanie" className={styles.link}>Oprogramowanie</Link>
+            <Link href="/uslugi-graficzne" className={styles.link}>Projektowanie graficzne</Link>
           </div>
 
           <div className={styles.footer_col}>
-            <a href="#why-us" className={styles.link}>O Nas</a>
-            <a href="#why-us" className={styles.link}>Dlaczego My?</a>
-            <a href="#mission" className={styles.link}>Nasza Misja</a>
-            <a href="#partners" className={styles.link}>Partnerzy</a>
-            <a href="#opinions" className={styles.link}>Opinie</a>
+            <Link href="#why-us" className={styles.link}>O Nas</Link>
+            <Link href="#why-us" className={styles.link}>Dlaczego My?</Link>
+            <Link href="#mission" className={styles.link}>Nasza Misja</Link>
+            <Link href="#partners" className={styles.link}>Partnerzy</Link>
+            <Link href="#opinions" className={styles.link}>Opinie</Link>
           </div>
 
           <div className={styles.footer_col}>
-            <a href="#contact" className={styles.link}>Kontakt</a>
-            <a href="#help" className={styles.link}>Pomoc</a>
-            <a href="/polityka-prywatności" className={styles.link}>Polityka prywatności</a>
-            <a href="/regulamin" className={styles.link}>Regulamin</a>
+            <Link href="#contact" className={styles.link}>Kontakt</Link>
+            <Link href="#help" className={styles.link}>Pomoc</Link>
+            <Link href="/polityka-prywatności" className={styles.link}>Polityka prywatności</Link>
+            <Link href="/regulamin" className={styles.link}>Regulamin</Link>
           </div>
 
           <div className={styles.footer_col}>
-            <a href="#faq" className={styles.link}>FAQ</a>
+            <Link href="#faq" className={styles.link}>FAQ</Link>
           </div>
         </div>
 

@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import Button from "../button/Button";
 import styles from "./Calendar.module.scss";
-
+import Image from "next/image";
 const Calendar = () => {
   const [active, setActive] = useState<null | "arrival" | "departure">(null);
   const [peopleCount, setPeopleCount] = useState<number>(2); // początkowa liczba osób
@@ -45,7 +45,7 @@ const Calendar = () => {
             Data przyjazdu
           </p>
         </div>
-        <img className={styles.icon} src="/calendar.png" alt="icon" />
+        <Image height={24} width={24} className={styles.icon} src="/calendar.png" alt="icon" />
 
         {active === "arrival" && (
           <div className={`${styles.popup} ${styles.popup_arival}`} onClick={(e) => e.stopPropagation()}>
@@ -68,7 +68,7 @@ const Calendar = () => {
             Data wyjazdu
           </p>
         </div>
-        <img className={styles.icon} src="/calendar.png" alt="icon" />
+        <Image width={24} height={24}className={styles.icon} src="/calendar.png" alt="icon" />
 
         {active === "departure" && (
           <div className={`${styles.popup} ${styles.popup_decapture}`} onClick={(e) => e.stopPropagation()}>
@@ -95,7 +95,7 @@ const Calendar = () => {
         </div>
       </div>
 
-      <Button size="large" color="secondary" rounded="rounded">
+      <Button to="/" size="large" color="secondary" rounded="rounded">
         Zarezerwuj
       </Button>
     </div>

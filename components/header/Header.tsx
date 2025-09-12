@@ -1,5 +1,7 @@
 "use client"
 
+import Link from "next/link";
+import Image from "next/image";
 import Button from "../button/Button";
 import styles from "./Header.module.scss";
 import { useState } from "react";
@@ -21,33 +23,33 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={`${styles.header_items} container`}>
-        <a href="/" className={styles.logo}>
-          <img
+        <Link href="/" className={styles.logo}>
+          <Image
             loading="lazy"
             style={{ marginRight: "8px" }}
             src="/GALICA.png"
             alt="LOGO"
           />
    
-        </a>
+        </Link>
 
         <nav className={`${styles.nav} ${isOpen ? styles.open : ""}`}>
           {navSections.map((section) => (
-            <a
+            <Link
               key={section.label}
               href={section.href}
               className={styles.nav_item}
             >
               {section.label}
-            </a>
+            </Link>
           ))}
 
               <span className={styles.mobile}>
-          <Button size="large" color="secondary" rounded="rounded" >Zarezerwuj</Button>
+          <Button to="/" size="large" color="secondary" rounded="rounded" >Zarezerwuj</Button>
   </span>
         </nav>
            <span className={styles.desktop}>
-          <Button size="large" color="secondary" rounded="rounded" >Zarezerwuj</Button>
+          <Button to="/" size="large" color="secondary" rounded="rounded" >Zarezerwuj</Button>
   </span>
         <div
           className={`${styles.hamburger} ${isOpen ? styles.open : ""}`}

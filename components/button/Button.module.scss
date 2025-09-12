@@ -11,8 +11,8 @@
 }
 .large{
   font-size: 16px;
-
-  padding:  13px 20px ; 
+  
+  padding:  10px 20px ; 
 }
 .a{
   display: flex;
@@ -24,24 +24,25 @@
   border: none;
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
   transition: background-color ease-in-out 0.3s;
+  line-height: 150%;
 }
 .primary{
   background-color: v.$primary;
-  color: #ffffff;
+  color: v.$primary;
   &:hover{
     background-color: v.$primary-light;
   }
 }
 .secondary{
   background-color: v.$secondary;
-   color: #ffffff;
+   color: v.$secondary-button-text;
   &:hover{
     background-color: v.$secondary-light;
   }
 }
 .white{
   background-color: #ffffff;
-  color: #111418;
+     color: v.$secondary;
 
 }
 
@@ -54,7 +55,7 @@
   justify-content: center;
   text-align: center;
   text-decoration: none;
-  color: #fff;
+
   cursor: pointer;
   
 }

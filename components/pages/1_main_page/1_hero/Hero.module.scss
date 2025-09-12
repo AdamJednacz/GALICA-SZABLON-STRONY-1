@@ -1,4 +1,4 @@
-.background{
+.hero{
     width: 100%;
     height: 80svh;
     background-image: url("/background.jpg");
@@ -7,7 +7,7 @@
     background-size: cover;
     padding-top: 100px;
 }
-.hero{
+.hero_contaienr{
     z-index: 0;
     position: relative;
       height: 80svh;

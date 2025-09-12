@@ -3,8 +3,8 @@ import styles from "./Hero.module.scss"
 
 const Hero = () => {
   return (
-    <div className={styles.background}>
-    <div className={`container ${styles.hero}`}>
+    <div className={styles.hero}>
+    <div className={`container ${styles.hero_container}`}>
         <Calendar/>
     </div>
     </div>
