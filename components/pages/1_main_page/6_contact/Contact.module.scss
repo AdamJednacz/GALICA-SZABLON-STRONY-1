@@ -2,12 +2,12 @@
 @use "styles/_variables.scss" as v;
 .contact{
  
-    padding: 48px 0;
+    padding: 16px 0;
 
         color: v.$primary-text-color;
     @include m.desktop{
     padding: 48px 96px;
-    margin-top: 80px;
+    margin-top: 40px;
     }
     
 }

@@ -1,0 +1,43 @@
+@use "styles/_mixins.scss" as m;
+
+.rooms {
+  display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  gap: 32px;
+    margin: 32px auto;
+    max-width: 100%;
+  @include m.desktop{
+       max-width: 90%;
+    margin: 64px auto;
+  gap: 32px;
+  }
+}
+
+.room_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  background-color: #fff;
+  gap: 32px;
+  padding: 32px 32px;
+  max-width: 340px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  @include m.desktop{
+    width: 30%;
+  }
+
+}
+
+.room_card_img {
+  position: relative;   
+  width: 100%;        
+          height: 260px;
+  overflow: hidden;     
+ 
+  @include m.desktop{
+      height: 320px;
+  }
+}

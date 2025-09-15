@@ -8,12 +8,12 @@ import { useState } from "react";
 
 const navSections = [
   { id: "/", label: "Strona Główna", href: "/" },
-  { id: "offer", label: "Oferta", href: "#offer" },
-  { id: "gallery", label: "Galeria", href: "#about" },
-  { id: "atractions", label: "Atrakcje", href: "#help" },
-  { id: "about", label: "O obiekcie", href: "#faq" },
-    { id: "contact", label: "Kontakt", href: "#faq" },
-      { id: "faq", label: "FAQ", href: "#faq" },
+  { id: "offer", label: "Oferta", href: "/oferta" },
+  { id: "gallery", label: "Galeria", href: "/galeria" },
+  { id: "atractions", label: "Atrakcje", href: "/atrakcje" },
+  { id: "about", label: "O obiekcie", href: "/o-nas" },
+    { id: "contact", label: "Kontakt", href: "/kontakt" },
+      { id: "faq", label: "FAQ", href: "/faq" },
 ];
 
 const Header = () => {
@@ -26,8 +26,10 @@ const Header = () => {
         <Link href="/" className={styles.logo}>
           <Image
             loading="lazy"
-            style={{ marginRight: "8px" }}
-            src="/GALICA.png"
+            width={70}
+            height={50}
+            style={{ marginRight: "8px" ,color:"#000"}}
+            src="/"
             alt="LOGO"
           />
    
@@ -45,11 +47,11 @@ const Header = () => {
           ))}
 
               <span className={styles.mobile}>
-          <Button to="/" size="large" color="secondary" rounded="rounded" >Zarezerwuj</Button>
+          <Button to="/" size="large" color="secondary" rounded="no-rounded" >Zarezerwuj</Button>
   </span>
         </nav>
            <span className={styles.desktop}>
-          <Button to="/" size="large" color="secondary" rounded="rounded" >Zarezerwuj</Button>
+          <Button to="/" size="large" color="secondary" rounded="no-rounded" >Zarezerwuj</Button>
   </span>
         <div
           className={`${styles.hamburger} ${isOpen ? styles.open : ""}`}

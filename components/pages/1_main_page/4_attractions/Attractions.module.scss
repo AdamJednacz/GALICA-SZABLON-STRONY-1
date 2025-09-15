@@ -2,12 +2,13 @@
 @use "styles/_variables.scss" as v;
 .attractions{
     background-color:v.$secondary ;
-    padding: 48px 0;
-
+box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 32px;
     color: v.$secondary-text-color;
     @include m.desktop{
     padding: 48px 96px;
     margin-top: 80px;
+    margin-bottom: 0;
     }
     
 }

@@ -1,14 +1,42 @@
+@use "styles/_mixins.scss" as m;
+
 .hero{
     width: 100%;
-    height: 80svh;
+    margin-bottom: 32px;
+    height:calc(100svh - 110px);
+      z-index: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     background-image: url("/background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 100px;
+    padding-top: 110px;
+           &::before {
+    content: "";
+
+    position: absolute;
+    inset: 0; 
+    background: rgba(0, 0, 0, 0.25); 
+    z-index: 1;
+    top:0;
+    left: 0;
+          height: calc(100svh - 110px);
+              padding-top: 110px;
+          @include m.desktop{
+           height: calc(100svh - 110px);
+          }
+  }
+
+  @include m.desktop{
+  height: calc(100svh - 110px);
+    margin-bottom: 0;
+  }
+  
 }
-.hero_contaienr{
-    z-index: 0;
+.hero_container{
+    z-index: 2;
     position: relative;
       height: 80svh;
+    
+ 
 }

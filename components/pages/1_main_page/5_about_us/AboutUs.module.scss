@@ -2,8 +2,8 @@
 @use "styles/_variables.scss" as v;
 .aboutUs{
     background-color: v.$primary;
-    padding: 48px 0;
-
+        
+box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         color: v.$primary-text-color;
     @include m.desktop{
     padding: 48px 96px;

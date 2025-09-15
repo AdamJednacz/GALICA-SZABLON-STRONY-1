@@ -6,30 +6,29 @@ import React from "react"
 export interface CardContent {
   h2: string
   p: string
-  buttonLink: string
-  buttonText: string
-  buttonColor: "primary" | "secondary" | "white"
+  buttonLink?: string
+  buttonText?: string
+  buttonColor?: "primary" | "secondary" | "white"
   imgSrc: string
   imgAlt: string
   list?: string[]
 }
 
 export interface CardProps {
-  rowReverse?: boolean
   content: CardContent
   backgroundColor?: string
-  noButton?: boolean // 🔥 jeśli true, button się nie pokaże
+  noButton?: boolean
+  className?: string // ✨ nowa opcja na własną klasę
+  style?: React.CSSProperties // ✨ inline style
 }
 
-const Card: React.FC<CardProps> = ({ rowReverse = false, content, backgroundColor, noButton }) => {
+const Card: React.FC<CardProps> = ({ content, backgroundColor, noButton, className = "", style }) => {
   const { h2, p, buttonLink, buttonColor, buttonText, imgSrc, imgAlt, list } = content
 
   return (
     <div
-      className={`container ${styles.card_container} ${
-        rowReverse ? styles.card_container_row_reverse : styles.card_container_row
-      }`}
-      style={{ backgroundColor }}
+      className={`container ${styles.card_container} ${className}`}
+      style={{ backgroundColor, ...style }}
     >
       <div className={styles.card_text}>
         <h2>{h2}</h2>
@@ -44,14 +43,14 @@ const Card: React.FC<CardProps> = ({ rowReverse = false, content, backgroundColo
         )}
 
         {!noButton && (
-          <Button to={buttonLink} size="large" color={buttonColor} rounded="rounded">
+          <Button to={buttonLink} size="large" color={buttonColor} rounded="no-rounded">
             {buttonText}
           </Button>
         )}
       </div>
 
       <div className={styles.image}>
-        <Image src={imgSrc} alt={imgAlt} fill style={{ objectFit: "cover" }} />
+        <Image src={imgSrc} alt={imgAlt} fill  />
       </div>
     </div>
   )

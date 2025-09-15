@@ -1,77 +1,78 @@
 @use "styles/_mixins.scss" as m;
-.card_container{
-    display: flex;
-    flex-wrap: wrap-reverse;
-    //   flex-direction: column-reverse;
-   
-    justify-content: center;
+
+.card_container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  //   flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+
+
+  gap: 16px;
+  @include m.desktop {
+    max-width: 90%;
+    padding: 32px;
     gap: 32px;
-      width: 100%;
-   
-      align-items: stretch;
-      align-items: center;
-      @include m.desktop{
-   padding:32px ;
-      }
+  }
+  @include m.tablet {
+    max-width: 100%;
+    padding: 32px 0 ;
+    justify-content: center;
+
+    gap: 32px;
+  }
 }
 
-.card_container_row{
-  @include m.desktop{
-        flex-wrap: nowrap;
-          flex-direction: row;
-             justify-content: space-between;
-    }
-}
-.card_container_row_reverse{
-  @include m.desktop{
-        flex-wrap: nowrap;
-          flex-direction: row-reverse;
-             justify-content: space-between;
-    }
-}
-
-.image{
-    width: 100%;
+.image {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 5 / 3; // opcjonalnie proporcja 4:3
+  overflow: hidden;
   
-    position: relative;
-    max-width: 500px;
-    height: 35svh;
-   
-    @include m.desktop{
-      height: stretch;
-      max-width: 60%;
-     flex: 1 0 0;
-align-self: stretch;
-     
+  @include m.desktop {
+  max-width: 600px;
+  }
 
-    }
-  
+  @include m.tablet {
+    max-width: 600px;
+     aspect-ratio: 5 / 3; // dopasowanie do naturalnej proporcji
+  }
 }
-.card_text{
-    width: 100%;
-    max-width: 480px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap:32px;
-    @include m.desktop{
-           gap: 48px;
+.card_text {
+
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 32px;
+  padding: 16px;
+  align-items: flex-start;
+  text-align: left;
+  @include m.desktop {
+    gap: 48px;
     align-items: flex-start;
-    text-align: left; 
-    }
-    @media (max-width:1130px) {
-           align-items: center;
-    text-align: center;
-    }
-    @include m.tablet{
-      
-    }
+    text-align: left;
+  }
+
+  @include m.tablet {
+    padding: 0;
+    max-width:550px ;
+        
+        text-align: left;
+        .card_list{
+            text-align: left;
+        }
+  }
 }
 
-.card_list{
-    display: flex;
-    flex-direction: column;
-    list-style: inside;
-    margin-left: 16px;
-    gap: 8px;
+.card_list {
+  display: flex;
+  flex-direction: column;
+  list-style: inside;
+  margin-left: 16px;
+  gap: 8px;
+  font-size: 14px;
 }

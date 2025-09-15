@@ -2,23 +2,9 @@ import React from 'react'
 import Card, { CardContent } from '../../../../components/card/Card'
 import styles from "./page.module.scss"
 import GalleryComponent, { GalleryItem } from '../../../../components/gallery_component/GalleryComponent'
+import { notFound } from 'next/navigation'
 
-const content :CardContent = {
-    h2: "Pokoje 2-osobowe",
-    p: "    Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velit. Quis senectus neque  dictum bibendum orci. Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velit. Quis senectus neque dictum bibendum orci.",
-    buttonLink: "/rooms",
-    buttonText: "Zarezerwuj pokój",
-    buttonColor:"secondary",
-    imgSrc: "/pokoj_2.jpg",
-    imgAlt: "Zdjęcie pokoju",
-    list:[
-        "Klimatyzacja",
-        "Stolik i krzesło",
-        "Lodówka",
-        "Aneks kuchenny",
-        "Balkon"
-    ]
-  }
+
 const images :GalleryItem[] = [
     {
         src:'/gallery_1.jpg',
@@ -54,9 +40,48 @@ const images :GalleryItem[] = [
     },
     
 ]
+const roomsData: Record<string, CardContent> = {
+  "pokoj-1": {
+    h2: "Pokój 1-osobowy",
+    p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velit.feugiat amet purus cras sit velit. Quis senectus neque dictum bibendum orci. Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Pokój zawiera",
+    buttonLink: "/rooms",
+    buttonText: "Zarezerwuj pokój",
+    buttonColor: "secondary",
+    imgSrc: "/pokoj_1.jpg",
+    imgAlt: "Zdjęcie pokoju 1",
+    list: ["Klimatyzacja", "Biurko", "TV"]
+  },
+  "pokoj-2": {
+    h2: "Pokój 2-osobowy",
+    p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velitfeugiat amet purus cras sit velit. Quis senectus neque dictum bibendum orci. Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Pokój zawiera.",
+    buttonLink: "/rooms",
+    buttonText: "Zarezerwuj pokój",
+    buttonColor: "secondary",
+    imgSrc: "/pokoj_2.jpg",
+    imgAlt: "Zdjęcie pokoju 2",
+    list: ["Klimatyzacja", "Stolik i krzesło", "Lodówka", "Balkon"]
+  },
+  "pokoj-3": {
+    h2: "Pokój 3-osobowy",
+    p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velitfeugiat amet purus cras sit velit. Quis senectus neque dictum bibendum orci. Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Pokój zawiera.",
+    buttonLink: "/rooms",
+    buttonText: "Zarezerwuj pokój",
+    buttonColor: "secondary",
+    imgSrc: "/pokoj_3.jpg",
+    imgAlt: "Zdjęcie pokoju 3",
+    list: ["Aneks kuchenny", "Balkon", "TV", "Wi-Fi"]
+  }
+}
+type RoomPageProps = {
+  params: { room: string }
+}
+const Page = ({ params }: RoomPageProps) => {
+  const content = roomsData[params.room]
 
-const page = () => {
-  return (
+  if (!content) {
+    notFound()
+  }
+  return(
     <section className={styles.room_site}>
         <Card backgroundColor='#fff' content={content} />
         
@@ -67,5 +92,4 @@ const page = () => {
     </section>
   )
 }
-
-export default page
+export default Page

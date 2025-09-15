@@ -16,7 +16,7 @@ const content :CardContent = {
 const AboutUs = () => {
   return (
     <section className={styles.aboutUs}>
-        <Card rowReverse content={content}/>
+        <Card style={{flexDirection:"row-reverse"}} content={content}/>
     </section>
   )
 }

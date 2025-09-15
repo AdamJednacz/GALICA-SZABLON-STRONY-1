@@ -1,0 +1,13 @@
+@use "styles/_mixins.scss" as m;
+.object_atrractions{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.object_atrractions_h2{
+    margin: 60px auto;
+    
+    @include m.desktop{
+        margin: 120px auto;
+    }
+}

@@ -25,7 +25,7 @@ const GalleryComponent: React.FC<GalleryProps> = ({
   buttonLink,
   buttonColor = "secondary",
   buttonSize = "large",
-  buttonRounded = "rounded",
+  buttonRounded = "no-rounded",
   noButton = false,
   className = "",
 }) => {

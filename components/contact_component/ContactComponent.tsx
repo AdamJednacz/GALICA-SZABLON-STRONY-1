@@ -8,28 +8,28 @@ export interface ComponentProps {
 const data = [
   {
     icon: {
-      src: "/apartment.png",
+      src: "/apartment.svg",
       alt: "Ikona apartamentu",
     },
     text: "Nazwa obiektu",
   },
   {
     icon: {
-      src: "/phone.png",
+      src: "/phone.svg",
       alt: "Ikona telefonu",
     },
     text: "+48 123 456 789",
   },
   {
     icon: {
-      src: "/mail.png",
+      src: "/mail.svg",
       alt: "Ikona Maila",
     },
     text: "obiekt@mail.pl",
   },
   {
     icon: {
-      src: "/location.png",
+      src: "/location.svg",
       alt: "Ikona Lokacji",
     },
     text: "ul. Harenda 15 B, Zakopane",

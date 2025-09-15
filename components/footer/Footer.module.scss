@@ -33,10 +33,11 @@
   align-items: start;
   @include m.tablet{
 
+    grid-template-columns: repeat(5, 1fr);
   }
  @include m.desktop{
 
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
   }
 }
 

@@ -23,32 +23,33 @@ const Footer = () => {
           </div>
 
           <div className={styles.footer_col}>
-            <Link href="#offer" className={styles.link}>Oferta</Link>
-            <Link href="/zdalna-recepcja" className={styles.link}>Zdalna recepcja</Link>
-            <Link href="/strony-internetowe" className={styles.link}>Strony internetowe</Link>
-            <Link href="/zarzadzanie-zyskiem" className={styles.link}>Zarządzanie zyskiem</Link>
-            <Link href="/oprogramowanie" className={styles.link}>Silniki rezerwacyjne</Link>
-            <Link href="/oprogramowanie" className={styles.link}>Oprogramowanie</Link>
-            <Link href="/uslugi-graficzne" className={styles.link}>Projektowanie graficzne</Link>
+            <Link href="/oferta" className={styles.link}>Oferta</Link>
+
           </div>
 
           <div className={styles.footer_col}>
-            <Link href="#why-us" className={styles.link}>O Nas</Link>
-            <Link href="#why-us" className={styles.link}>Dlaczego My?</Link>
-            <Link href="#mission" className={styles.link}>Nasza Misja</Link>
-            <Link href="#partners" className={styles.link}>Partnerzy</Link>
-            <Link href="#opinions" className={styles.link}>Opinie</Link>
+            <Link href="/galeria" className={styles.link}>Galeria</Link>
+ 
           </div>
 
           <div className={styles.footer_col}>
-            <Link href="#contact" className={styles.link}>Kontakt</Link>
-            <Link href="#help" className={styles.link}>Pomoc</Link>
-            <Link href="/polityka-prywatności" className={styles.link}>Polityka prywatności</Link>
-            <Link href="/regulamin" className={styles.link}>Regulamin</Link>
+            <Link href="/atrakcje" className={styles.link}>Atrakcje</Link>
+         
           </div>
 
           <div className={styles.footer_col}>
-            <Link href="#faq" className={styles.link}>FAQ</Link>
+            <Link href="/o-nas" className={styles.link}>O obiekcie</Link>
+          </div>
+          <div className={styles.footer_col}>
+            <Link href="/kontakt" className={styles.link}>Kontakt</Link>
+            <p>+48 123 456 789</p>
+            <p>obiekt@gmail.com</p>
+            <p>Ul. Krakowska 1/2 12-345 Kraków</p>
+          </div>
+              <div className={styles.footer_col}>
+            <Link href="/faq" className={styles.link}>FAQ</Link>
+               <Link href="/regulamin" className={styles.link}>Regulamin</Link>
+                  <Link href="/polityka-prywatności" className={styles.link}>Polityka Prywatności</Link>
           </div>
         </div>
 

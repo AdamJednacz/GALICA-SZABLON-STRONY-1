@@ -1,0 +1,118 @@
+@use "styles/_mixins.scss" as m;
+.opinions {
+  text-align: center;
+  margin: 80px auto;
+  max-width: 900px;
+
+  h2 {
+    font-size: 22px;
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+}
+
+.arrow_1{
+    left: 30%;
+}
+.arrow_2{
+    right: 30%;
+}
+.arrow {
+    position: absolute;
+    bottom: -50px;
+
+    @include m.desktop{
+        position: unset;
+    }
+    @include m.tablet{
+        position:unset;
+    }
+  background-color: #164194;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: #0f2e6d;
+  }
+}
+
+.slider {
+  overflow: hidden;
+  width: 300px; // szerokość całego widocznego slajdu
+
+    padding: 16px 0;
+    @include m.desktop{
+  width: 764px; // szerokość całego widocznego slajdu
+
+    }
+    @include m.tablet{
+        width: 564px;
+    }
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out; // efekt przesuwania
+  width: 100%;
+
+   
+}
+
+.card {
+  flex: 0 0 100%; // każdy slajd zajmuje 100% szerokości slidera
+  background: #fff;
+  padding: 32px;
+ 
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 204px;
+margin :0 16px ;
+
+  @include m.desktop{
+       max-width: 636px;
+        margin: 0 32px;
+        gap: 20px;
+  }
+   @include m.tablet{
+        max-width: 436px;
+           margin: 0 32px;
+        gap: 20px;
+    }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quoteIcon {
+  font-size: 28px;
+  color: #000;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}

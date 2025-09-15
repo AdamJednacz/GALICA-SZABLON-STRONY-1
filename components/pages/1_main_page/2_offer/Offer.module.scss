@@ -2,12 +2,12 @@
 @use "styles/_variables.scss" as v;
 .offer{
     background-color: v.$primary;
-    padding: 48px 0;
-    
+ 
         color: v.$primary-text-color;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     @include m.desktop{
     padding: 48px 96px;
-    margin-top: 80px;
+
     }
     
 }

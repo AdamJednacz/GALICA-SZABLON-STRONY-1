@@ -11,12 +11,11 @@
   background-color: transparent;
   overflow: hidden;
  background-color: v.$primary;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  padding: 15px 0;
+box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
 @include m.desktop{
-
-  box-shadow:unset;
-
+  padding: 15px 0;
+box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 
 }
 
@@ -26,7 +25,7 @@
   display: flex;
   justify-content: space-between;
 /* centrowanie kontenera */
-
+    align-items: center;
 
  
   padding: 30px 15px;
@@ -40,6 +39,15 @@
     width: 100%;
 
   }
+  // @media only screen and (min-width:992px)  {
+  //       padding: 10px 20px;
+  //   margin: 0 auto;
+
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   width: 100%;
+  // }
 
 }
 .logo{
@@ -61,7 +69,7 @@
   transform: translateY(-100%);
   width: 100%;
   padding: 40px  0 40px 0;
-
+  background-color: #ffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,7 +87,16 @@
     padding: 0;
     opacity: 1;
   }
-
+  @media only screen and (min-width:992px)  {
+    position: unset;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px;
+    width: auto;
+    padding: 0;
+    opacity: 1;
+  }
 }
 
 .open {
@@ -105,6 +122,10 @@
     opacity: 1;
 
   }
+   @media only screen and (min-width:992px) {
+        opacity: 1;
+          margin: 0 16px ;
+   }
 
 }
 
@@ -133,6 +154,9 @@
   @media (max-width: 1380px) {
     display: none;
   }
+  @media only screen and (min-width:992px) {
+      display: inline-block;
+   }
 }
 
 .mobile {
@@ -141,6 +165,9 @@
   @media (max-width: 1380px) {
     display: inline-block;
   }
+    @media only screen and (min-width:992px) {
+       display: none;
+   }
 }
 
 
@@ -151,6 +178,9 @@
   @include m.desktop {
     display: none;
   }
+   @media only screen and (min-width:992px) {
+       display: none;
+   }
   .bar {
     display: block;
     width: 25px;
