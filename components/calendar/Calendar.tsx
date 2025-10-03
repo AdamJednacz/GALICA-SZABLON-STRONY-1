@@ -38,12 +38,14 @@ const Calendar = () => {
         onClick={() => setActive(active === "arrival" ? null : "arrival")}
       >
         <div className={styles.calednar_item_container}>
-          <span className={`${styles.calendar_item_text} ${styles.calendar_item_text_span}`}>
-            Przyjazd
-          </span>
-          <p className={`${styles.calendar_item_text} ${styles.calendar_item_text_p}`}>
-            Data przyjazdu
+               <p className={`${styles.calendar_item_text} ${styles.calendar_item_text_p}`}>
+          Przyjazd
           </p>
+          <label className={`${styles.calendar_item_text} ${styles.calendar_item_text_span}`}>
+           
+               Data przyjazdu
+          </label>
+     
         </div>
         <Image height={24} width={24} className={styles.icon} src="/calendar.png" alt="icon" />
 
@@ -61,12 +63,14 @@ const Calendar = () => {
         onClick={() => setActive(active === "departure" ? null : "departure")}
       >
         <div className={styles.calednar_item_container}>
-          <span className={`${styles.calendar_item_text} ${styles.calendar_item_text_span}`}>
-            Wyjazd
-          </span>
+      
           <p className={`${styles.calendar_item_text} ${styles.calendar_item_text_p}`}>
-            Data wyjazdu
+         Wyjazd
           </p>
+              <label className={`${styles.calendar_item_text} ${styles.calendar_item_text_span}`}>
+         
+                  Data wyjazdu
+          </label>
         </div>
         <Image width={24} height={24}className={styles.icon} src="/calendar.png" alt="icon" />
 
@@ -80,12 +84,14 @@ const Calendar = () => {
       {/* Kto */}
       <div className={styles.calendar_item}>
         <div className={styles.calednar_item_container}>
-          <span className={`${styles.calendar_item_text} ${styles.calendar_item_text_span}`}>
-            Kto
-          </span>
-          <p className={`${styles.calendar_item_text} ${styles.calendar_item_text_p}`}>
-            Ilość osób
+              <p className={`${styles.calendar_item_text} ${styles.calendar_item_text_p}`}>
+      Kto
           </p>
+          <label className={`${styles.calendar_item_text} ${styles.calendar_item_text_span}`}>
+           
+                   Ilość osób
+          </label>
+      
         </div>
 
         <div className={styles.people_counter}>
@@ -95,7 +101,7 @@ const Calendar = () => {
         </div>
       </div>
 
-      <Button to="/" size="large" color="secondary" rounded="rounded">
+      <Button to="/" size="large" color="primary" rounded="rounded">
         Zarezerwuj
       </Button>
     </div>

@@ -23,7 +23,7 @@ const GalleryComponent: React.FC<GalleryProps> = ({
   images,
   buttonText = "Zobacz więcej",
   buttonLink,
-  buttonColor = "secondary",
+  buttonColor = "primary",
   buttonSize = "large",
   buttonRounded = "no-rounded",
   noButton = false,

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Button from "../button/Button";
 import styles from "./Header.module.scss";
 import { useState } from "react";
+import Button_3A from "../AAA_button/Button_3A";
 
 const navSections = [
   { id: "/", label: "Strona Główna", href: "/" },
@@ -13,7 +14,7 @@ const navSections = [
   { id: "atractions", label: "Atrakcje", href: "/atrakcje" },
   { id: "about", label: "O obiekcie", href: "/o-nas" },
     { id: "contact", label: "Kontakt", href: "/kontakt" },
-      { id: "faq", label: "FAQ", href: "/faq" },
+
 ];
 
 const Header = () => {
@@ -45,13 +46,15 @@ const Header = () => {
               {section.label}
             </Link>
           ))}
-
+          
               <span className={styles.mobile}>
-          <Button to="/" size="large" color="secondary" rounded="no-rounded" >Zarezerwuj</Button>
+                <Button_3A/> 
+          <Button to="/zarezerwuj" size="large" color="primary" rounded="no-rounded" >Zarezerwuj</Button>
   </span>
         </nav>
            <span className={styles.desktop}>
-          <Button to="/" size="large" color="secondary" rounded="no-rounded" >Zarezerwuj</Button>
+                       <Button_3A/> 
+          <Button to="/zarezerwuj" size="large" color="primary" rounded="no-rounded" >Zarezerwuj</Button>
   </span>
         <div
           className={`${styles.hamburger} ${isOpen ? styles.open : ""}`}

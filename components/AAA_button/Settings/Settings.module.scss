@@ -1,0 +1,87 @@
+@use "../../../styles/variables" as v;
+@use "../../../styles/_mixins.scss" as m;
+
+.settings.open {
+
+transform: translateX(0px);
+  @include m.desktop{
+  transform: translate(0,0);
+  
+  }
+}
+.settings_menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.settings_row{
+    max-width: 95%;
+  margin: 0 auto;
+    @include m.desktop{
+      margin: unset;
+  max-width: unset;
+  }
+
+}
+.icon{
+  fill: var(--Fonts-Dark);
+
+  &:focus-visible{
+    outline: 2px solid var(--Fonts-Dark);
+  }
+}
+.settings {
+ 
+
+  max-width: 100%;
+  position: fixed; // lepiej niż absolute, bo liczony względem okna
+  top: 50px;
+  left: 0;
+  z-index: 100000;
+  right: 0;
+    bottom: 0;
+  width: 100%;
+  height: auto; // pełna wysokość na telefonie
+  background-color: var(--System-Colors-System-Light);
+  ;
+  overflow-y: auto;
+  transform: translateX(100%); // całkowicie poza ekran
+  transition: transform 0.3s ease-in-out;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  @include m.desktop {
+          margin: unset;
+  max-width: unset;
+      padding: 16px;
+    width: 550px;
+    max-height: 500px;
+    top: 80px;
+    right: 0;
+    left: unset;
+    height: auto; // żeby nie zajmowało całego ekranu
+    transform: translateX(600px);
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+}
+
+.settings {
+  font-size: initial !important;
+  line-height: initial !important;
+  letter-spacing: initial !important;
+  word-spacing: initial !important;
+  text-align: initial !important;
+
+}
+.settings_elements{
+    margin-bottom: initial !important;
+      letter-spacing: 1.5 !important;
+      line-height: 1.5 !important;
+        text-align: initial !important;
+        
+}

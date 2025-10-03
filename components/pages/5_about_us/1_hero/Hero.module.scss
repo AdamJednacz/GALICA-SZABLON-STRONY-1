@@ -1,0 +1,34 @@
+@use "styles/_mixins.scss" as m;
+@use "styles/_variables.scss" as v;
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80svh;
+  background: url("/about_us_hero.jpg") center/cover no-repeat;
+  padding-top: 100px;
+  z-index: 0;
+box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+  }
+
+  > * {
+    position: relative;
+
+  }
+}
+.hero_container{
+        z-index: 2; 
+       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    position: relative;
+      height: 80svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--Fonts-Light);
+}

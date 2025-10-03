@@ -12,6 +12,7 @@ export interface CardContent {
   imgSrc: string
   imgAlt: string
   list?: string[]
+
 }
 
 export interface CardProps {
@@ -20,9 +21,10 @@ export interface CardProps {
   noButton?: boolean
   className?: string // ✨ nowa opcja na własną klasę
   style?: React.CSSProperties // ✨ inline style
+    imgStyles?: React.CSSProperties 
 }
 
-const Card: React.FC<CardProps> = ({ content, backgroundColor, noButton, className = "", style }) => {
+const Card: React.FC<CardProps> = ({ content, backgroundColor, noButton, className = "", style ,imgStyles}) => {
   const { h2, p, buttonLink, buttonColor, buttonText, imgSrc, imgAlt, list } = content
 
   return (
@@ -43,14 +45,14 @@ const Card: React.FC<CardProps> = ({ content, backgroundColor, noButton, classNa
         )}
 
         {!noButton && (
-          <Button to={buttonLink} size="large" color={buttonColor} rounded="no-rounded">
+          <Button to={buttonLink} size="large" color={buttonColor ?? "primary"} rounded="no-rounded">
             {buttonText}
           </Button>
         )}
       </div>
 
-      <div className={styles.image}>
-        <Image src={imgSrc} alt={imgAlt} fill  />
+      <div style={{...imgStyles}} className={styles.image}>
+        <Image objectFit="cover"  src={imgSrc} alt={imgAlt} fill  />
       </div>
     </div>
   )

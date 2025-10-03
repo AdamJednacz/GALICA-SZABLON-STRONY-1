@@ -1,0 +1,17 @@
+@use "../../styles/mixins" as m;
+
+.button{
+    display: flex;
+padding: 10px;
+align-items: center;
+gap: 4px;
+border-radius: 200px;
+border: 2px solid var(--Fonts-Dark) ;
+background: transparent;
+color: var(--Fonts-Dark) ;
+font-size: 10px;
+}
+
+.svg{
+    fill: var(--Fonts-Dark);
+}

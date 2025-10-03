@@ -5,6 +5,7 @@ const Hero = () => {
   return (
     <div className={styles.hero}>
     <div className={`container ${styles.hero_container}`}>
+      <h1>Komfort i Widok: Twoje Miejsce na Ucieczkę od <br/>Codzienności.</h1>
         <Calendar/>
     </div>
     </div>

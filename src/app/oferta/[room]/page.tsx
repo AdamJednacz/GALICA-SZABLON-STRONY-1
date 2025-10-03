@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { use } from 'react'
 import Card, { CardContent } from '../../../../components/card/Card'
 import styles from "./page.module.scss"
 import GalleryComponent, { GalleryItem } from '../../../../components/gallery_component/GalleryComponent'
@@ -46,7 +46,7 @@ const roomsData: Record<string, CardContent> = {
     p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velit.feugiat amet purus cras sit velit. Quis senectus neque dictum bibendum orci. Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Pokój zawiera",
     buttonLink: "/rooms",
     buttonText: "Zarezerwuj pokój",
-    buttonColor: "secondary",
+    buttonColor: "primary",
     imgSrc: "/pokoj_1.jpg",
     imgAlt: "Zdjęcie pokoju 1",
     list: ["Klimatyzacja", "Biurko", "TV"]
@@ -56,7 +56,7 @@ const roomsData: Record<string, CardContent> = {
     p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velitfeugiat amet purus cras sit velit. Quis senectus neque dictum bibendum orci. Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Pokój zawiera.",
     buttonLink: "/rooms",
     buttonText: "Zarezerwuj pokój",
-    buttonColor: "secondary",
+    buttonColor: "primary",
     imgSrc: "/pokoj_2.jpg",
     imgAlt: "Zdjęcie pokoju 2",
     list: ["Klimatyzacja", "Stolik i krzesło", "Lodówka", "Balkon"]
@@ -66,24 +66,28 @@ const roomsData: Record<string, CardContent> = {
     p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velitfeugiat amet purus cras sit velit. Quis senectus neque dictum bibendum orci. Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Pokój zawiera.",
     buttonLink: "/rooms",
     buttonText: "Zarezerwuj pokój",
-    buttonColor: "secondary",
+    buttonColor: "primary",
     imgSrc: "/pokoj_3.jpg",
     imgAlt: "Zdjęcie pokoju 3",
     list: ["Aneks kuchenny", "Balkon", "TV", "Wi-Fi"]
   }
 }
-type RoomPageProps = {
-  params: { room: string }
-}
-const Page = ({ params }: RoomPageProps) => {
-  const content = roomsData[params.room]
+
+
+const Page = ({
+  params,
+}: {
+  params: Promise<{ room: string }>
+})=> {
+  const {room} = use(params)
+  const content = roomsData[room]
 
   if (!content) {
     notFound()
   }
   return(
     <section className={styles.room_site}>
-        <Card backgroundColor='#fff' content={content} />
+        <Card imgStyles={{height:"auto"}} backgroundColor='#fff' content={content} />
         
 <GalleryComponent
   images={images}

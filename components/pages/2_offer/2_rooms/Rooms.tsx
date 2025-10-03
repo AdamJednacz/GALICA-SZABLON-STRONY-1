@@ -1,5 +1,5 @@
 import Button from "../../../button/Button"
-import Card, { CardContent } from "../../../card/Card"
+
 import styles from "./Rooms.module.scss"
 import Image from "next/image"
 const roomsContent = [
@@ -8,7 +8,7 @@ const roomsContent = [
     p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velit.",
     buttonLink: "oferta/pokoj-1",
     buttonText: "Zarezerwuj pokój",
-    buttonColor: "secondary",
+    buttonColor: "primary",
     imgSrc: "/pokoj_1.jpg",
     imgAlt: "Zdjęcie pokoju 1",
 
@@ -18,7 +18,7 @@ const roomsContent = [
     p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velit.",
     buttonLink: "oferta/pokoj-2",
     buttonText: "Zarezerwuj pokój",
-    buttonColor: "secondary",
+    buttonColor: "primary",
     imgSrc: "/pokoj_2.jpg",
     imgAlt: "Zdjęcie pokoju 2",
 
@@ -28,7 +28,7 @@ const roomsContent = [
     p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velit.",
     buttonLink: "oferta/pokoj-3",
     buttonText: "Zarezerwuj pokój",
-    buttonColor: "secondary",
+    buttonColor: "primary",
     imgSrc: "/pokoj_3.jpg",
     imgAlt: "Zdjęcie pokoju 3",
 
@@ -56,7 +56,7 @@ const Rooms = () => {
     icon="/arrow.svg"
     rounded="no-rounded"
     size="large"
-    color="secondary"
+    color="primary"
     to={content.buttonLink}
   >
     {content.buttonText}

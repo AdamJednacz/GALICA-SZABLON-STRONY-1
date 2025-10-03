@@ -1,3 +1,6 @@
+'use client'
+
+import Button from "../../../button/Button"
 import Card, { CardContent } from "../../../card/Card"
 import styles from "./ObjectAttractions.module.scss"
 const attractionsContent:CardContent[] = [
@@ -27,6 +30,7 @@ const attractionsContent:CardContent[] = [
 ]
 
 const ObjectAtrractions = () => {
+
   return (
     <div className={styles.object_atrractions}>
     <div className={`${styles.object_atrractions_container} container `}>
@@ -35,10 +39,14 @@ const ObjectAtrractions = () => {
 
     </div>
       {attractionsContent.map((data,index)=>(
-          <Card backgroundColor="#fff" key={index} noButton  content={data}/>
+          <Card imgStyles={{objectFit:'cover'}} backgroundColor="#fff" key={index} noButton  content={data}/>
 
 
       ))}
+      <div className={`${styles.object_atrractions_bottom_text} container`}>
+        <h2 className={styles.object_atrractions_bottom_text_h2}>Chcesz zobaczyć więcej zdjęć naszych atrackcji ?</h2>
+        <Button size="large" rounded="no-rounded" color="primary" to="/galeria">Przejdź do galerii</Button>
+      </div>
       </div>
   )
 }

@@ -40,7 +40,7 @@ const Gallery = () => {
   return (
     <>
     <Hero/>
-    <GalleryComponent images={images}/>
+    <GalleryComponent noButton images={images}/>
         </>
   )
 }

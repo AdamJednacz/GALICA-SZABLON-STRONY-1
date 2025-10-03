@@ -46,7 +46,7 @@ const Gallery = () => {
   images={images}
   buttonText="Zobacz więcej"
   buttonLink="/galeria"
-  buttonColor="secondary"
+  buttonColor="primary"
 />
     </section>
   )

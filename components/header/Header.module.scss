@@ -10,7 +10,7 @@
   z-index: 1000;
   background-color: transparent;
   overflow: hidden;
- background-color: v.$primary;
+background: var(--System-Colors-System-Light, #FFF);
 box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 
 @include m.desktop{
@@ -68,8 +68,8 @@ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   top:0%;
   transform: translateY(-100%);
   width: 100%;
-  padding: 40px  0 40px 0;
-  background-color: #ffff;
+  padding: 0px  0 40px 0;
+background: var(--System-Colors-System-Light, #FFF);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,15 +87,8 @@ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     padding: 0;
     opacity: 1;
   }
-  @media only screen and (min-width:992px)  {
-    position: unset;
-    transform: translateY(0);
-    display: flex;
-    flex-direction: row;
-    border-radius: 50px;
-    width: auto;
-    padding: 0;
-    opacity: 1;
+  @include m.tablet  {
+
   }
 }
 
@@ -112,7 +105,7 @@ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 .nav_item{
   opacity: 0;
   font-size:1rem;
-  color: v.$primary-text-color;
+  color: var(--Fonts-Dark);
   text-decoration: none;
   font-weight: 400;
   margin: 16px 0;
@@ -122,10 +115,10 @@ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     opacity: 1;
 
   }
-   @media only screen and (min-width:992px) {
-        opacity: 1;
-          margin: 0 16px ;
-   }
+  @include m.tablet{
+      opacity: 0;
+        margin: 16px 0;
+  }
 
 }
 
@@ -149,25 +142,30 @@ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 
 
 .desktop {
-  display: inline-block;
+  display: none;
+  @include m.desktop{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 
-  @media (max-width: 1380px) {
+  }
+  @include m.tablet{
     display: none;
   }
-  @media only screen and (min-width:992px) {
-      display: inline-block;
-   }
+
 }
 
 .mobile {
+    display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @include m.desktop{
   display: none;
 
-  @media (max-width: 1380px) {
-    display: inline-block;
   }
-    @media only screen and (min-width:992px) {
-       display: none;
-   }
+  @include m.tablet{
+
+  }
 }
 
 
@@ -178,9 +176,7 @@ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   @include m.desktop {
     display: none;
   }
-   @media only screen and (min-width:992px) {
-       display: none;
-   }
+
   .bar {
     display: block;
     width: 25px;
@@ -188,7 +184,7 @@ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     margin:4px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background: v.$primary-text-color;
+    background:var(--Primary-Default);
     border-radius:32px ;
     z-index: 1000;
   }

@@ -1,6 +1,8 @@
 @use "styles/_mixins.scss" as m;
 .object_atrractions{
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     gap: 32px;
 }
@@ -10,4 +12,14 @@
     @include m.desktop{
         margin: 120px auto;
     }
+}
+
+.object_atrractions_bottom_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.object_atrractions_bottom_text_h2{
+    margin: 64px 0;
 }

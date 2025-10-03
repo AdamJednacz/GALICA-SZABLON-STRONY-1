@@ -6,6 +6,12 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 32px;
+   
+        @include m.desktop{
+     padding: 0 96px;
+        }
+
 }
 .contact_container_h2{
     margin-bottom: 44px;
@@ -39,11 +45,15 @@
 .contact_item_icon{
     
     padding: 25px;
-    background-color: v.$secondary;
+    background-color:var(--Primary-Default);
     border-radius: 50%;
     @include m.desktop{
          padding: 50px;
   width: 48px;
     }
 
+}
+
+.contact_item_span{
+   text-align: var(--app-text-align, center);
 }

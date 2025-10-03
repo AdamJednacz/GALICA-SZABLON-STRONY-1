@@ -1,0 +1,102 @@
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('./fonts/OpenDyslexic-Regular.woff2') format('woff2'),
+       url('./fonts/OpenDyslexic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+:root {
+  --font-size: 16px;
+  --line-height: 1.5;
+  --paragraph-space: 0px;
+  --letter-spacing: 0px;
+  --word-space: 0px;
+  --app-font-family: "Poppins", sans-serif; // domyślna
+  --app-text-align: initial;
+  --app-filter: contrast(100%);
+  --animation:initial;
+
+
+   --Fonts-Light: #fff;
+  --Fonts-Paragraph: #111418;
+  --Fonts-Dark: #03021e;
+  --Primary-Default: #1b53a5;
+  --System-Colors-System-Light: #fff;
+  --System-Colors-System-Dark: #d9d9d9;
+  --System-Colors-BG: #f7f7f7;
+--Fonts-Grey:#5E5E5E;
+  --Primary-Disabled:#99B2D6;
+
+
+}
+
+
+
+body{
+  transition: initial;
+}
+body.no-animations *,
+body.no-animations *::before,
+body.no-animations *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+    opacity: 1 !important;
+}
+
+/* Specjalnie dla framer-motion */
+body.no-animations [style*="transform"],
+body.no-animations [style*="animation"],
+body.no-animations [style*="transition"] {
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+}
+
+
+
+
+body {
+  font-family: var(--app-font-family)  !important;
+  font-size: var(--font-size) !important;
+  line-height: var(--line-height) !important;
+  letter-spacing: var(--letter-spacing) !important;
+  word-spacing: var(--word-space) !important;
+  transition: var(--animation) !important;
+  text-align: var(--app-text-align) !important;
+  background-color: var(--System-Colors-BG) !important;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100000000;
+  pointer-events: none;
+  background: rgba(255,255,255,0); // musi być "coś"
+    backdrop-filter: var(--app-filter) !important;
+}
+h1,h2,h3,h4,h5,h6,span,li{
+  line-height: var(--line-height) !important;
+}
+p {
+   margin-top: var(--paragraph-space) !important;
+  margin-bottom: var(--paragraph-space) !important;
+    line-height: var(--line-height) !important;
+}
+h4{
+     margin-top: var(--paragraph-space) !important;
+  margin-bottom: var(--paragraph-space) !important;
+    line-height: var(--line-height) !important;
+}
+
+li{
+       margin-top: var(--paragraph-space) !important;
+  margin-bottom: var(--paragraph-space) !important;
+}

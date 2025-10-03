@@ -1,0 +1,60 @@
+
+@use "../../../../styles/_mixins.scss" as m;
+
+.counter_setting{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+
+     @include m.desktop{
+    flex-direction: row;
+  }
+
+}
+.counter_setting_container{
+       display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    margin: 8px 0;
+}
+.counter_setting_icon{
+    width: 24px;
+}
+.counter_setting_value{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#f0f0f0 ;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.counter_setting_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    padding: 4px;
+    background-color: var( --Primary-Default);
+    &:focus-visible{
+        outline: 2px solid #000;
+    }
+}
+
+.counter_setting_button_icon{
+height: 24px;
+width: 24px;
+
+}
+.counter_setting_description{
+    margin-bottom: initial !important;
+      letter-spacing: 1.5 !important;
+      line-height: 1.5 !important;
+       
+  text-align: initial !important;
+}

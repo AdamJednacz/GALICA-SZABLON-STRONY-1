@@ -32,7 +32,10 @@ const data = [
       src: "/location.svg",
       alt: "Ikona Lokacji",
     },
-    text: "ul. Harenda 15 B, Zakopane",
+    text: (    <>
+      ul. Harenda 15 B,<br />
+      Zakopane
+    </>)
   },
 ]
 
@@ -51,7 +54,7 @@ const ContactComponent: React.FC<ComponentProps> = ({ h2 }) => {
               height={48}
             />
             </div>
-            <span>{item.text}</span>
+            <span className={styles.contact_item_span}>{item.text}</span>
           </div>
         ))}
  </div>

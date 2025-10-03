@@ -1,0 +1,17 @@
+@use "../../../styles/mixins" as m;
+
+.booking_engine{
+    max-width: 80%;
+    padding: 120px 0;
+    margin: 0 auto;
+   overflow: hidden;
+   @include m.desktop{
+        padding: 104px 0;
+   }
+    &_iframe{
+        width: 100%;
+        height: 105svh;
+   overflow: hidden;
+    }
+}
+

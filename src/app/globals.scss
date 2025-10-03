@@ -1,6 +1,21 @@
 @use "styles/_all.scss";
 @use "styles/_mixins.scss" as m;
 
+
+:root {
+  --Fonts-Light: #fff;
+  --Fonts-Paragraph: #111418;
+  --Fonts-Dark: #03021e;
+  --Primary-Default: #1b53a5;
+  --System-Colors-System-Light: #fff;
+  --System-Colors-System-Dark: #d9d9d9;
+  --System-Colors-BG: #f7f7f7;
+--Fonts-Grey:#5E5E5E;
+  --Primary-Disabled:#99B2D6;
+  --app-background: var(--System-Colors-BG);
+}
+
+
 .container {
     max-width: 90%;
     margin: 0 auto;
@@ -8,33 +23,14 @@
 }
 
 body{
-    background-color: #ededed;
-}
-h1{
-      font-size: 40px;
- 
-    @include m.desktop{
-          font-size: 48px;
-    }
+    background-color: var(  --System-Colors-BG) !important ;
 }
 
-h2{
-    font-size: 32px;
-    @include m.desktop{
-        font-size: 40px;
-    }
-}
-p{
-    font-size: 14px;
-    @include m.desktop {
-        font-size: 16px;
-    }
-}
 
-*:focus {
+*:focus-visible {
     outline: grey solid 2px;
 }
-a:focus{
+a:focus-visible{
      outline: grey solid 2px;
 }
 .lazy-load-image-background{

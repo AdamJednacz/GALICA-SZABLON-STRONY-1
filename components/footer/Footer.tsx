@@ -49,7 +49,7 @@ const Footer = () => {
               <div className={styles.footer_col}>
             <Link href="/faq" className={styles.link}>FAQ</Link>
                <Link href="/regulamin" className={styles.link}>Regulamin</Link>
-                  <Link href="/polityka-prywatności" className={styles.link}>Polityka Prywatności</Link>
+                  <Link href="/polityka-prywatnosci" className={styles.link}>Polityka Prywatności</Link>
           </div>
         </div>
 

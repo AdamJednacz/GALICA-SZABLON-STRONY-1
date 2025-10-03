@@ -27,23 +27,19 @@
   line-height: 150%;
 }
 .primary{
-  background-color: v.$primary;
-  color: v.$primary;
+  background-color: var(--Primary-Default);
+  color: var(  --Fonts-Light);
   &:hover{
-    background-color: v.$primary-light;
+    background-color: var(--Primary-Disabled);
   }
 }
-.secondary{
-  background-color: v.$secondary;
-   color: v.$secondary-button-text;
-  &:hover{
-    background-color: v.$secondary-light;
-  }
-}
-.white{
-  background-color: #ffffff;
-     color: v.$secondary;
 
+.white{
+    background-color: var(--Fonts-Light);
+  color: var(  --Fonts-Dark);
+  &:hover{
+    background-color: var(--Primary-Disabled);
+  }
 }
 
 .rounded{

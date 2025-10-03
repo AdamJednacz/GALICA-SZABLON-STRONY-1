@@ -12,15 +12,20 @@
 
   gap: 16px;
   @include m.desktop {
+    flex-wrap: nowrap;
     max-width: 90%;
     padding: 32px;
     gap: 32px;
+    flex-direction: unset;
+    &:nth-of-type(even){
+      flex-direction: row-reverse;
+    }
   }
   @include m.tablet {
     max-width: 100%;
-    padding: 32px 0 ;
+    padding-bottom:  32px ;
     justify-content: center;
-
+   flex-direction: unset;
     gap: 32px;
   }
 }
@@ -28,16 +33,19 @@
 .image {
   position: relative;
   width: 100%;
+height:250px;
   max-width: 800px;
   aspect-ratio: 5 / 3; // opcjonalnie proporcja 4:3
   overflow: hidden;
   
   @include m.desktop {
-  max-width: 600px;
+  max-width: 900px;
+  height:350px;
   }
 
   @include m.tablet {
-    max-width: 600px;
+    height:400px;
+    max-width: 100%;
      aspect-ratio: 5 / 3; // dopasowanie do naturalnej proporcji
   }
 }

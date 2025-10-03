@@ -1,4 +1,5 @@
 @use 'variables';
+@use '_mixins.scss' as m;
 
 
 html, body, div, span, applet, object, iframe,
@@ -32,31 +33,76 @@ h1,h2,h3,h4,h5,h6,p,label{
   line-height: 150%;
   
 }
+
+
 h1{
+  font-size: 36px;
+  line-height: 56px;
+  @include m.desktop{
   font-size: 48px;
+  line-height: 64px;
+  }
 }
 h2{
   font-size: 32px;
-  font-weight: 500;
+  line-height:48px ;
+  @include m.desktop{
+  font-size: 40px;
+  line-height:48px ;
+  }
+
 }
 h3{
-  font-size: 26px;
+  font-size: 28px;
+  line-height: 44px;
+  @include m.desktop{
+  font-size: 36px;
+  line-height: 44px;
+  }
 }
 h4{
-  font-size: 20px;
+  font-size: 24px;
+  line-height: 40px;
+  @include m.desktop{
+  font-size: 32px;
+  line-height: 40px;
+  }
 }
 h5{
-  font-size: 16px;
+  font-size: 20px;
+  line-height: 32px;
+  @include m.desktop{
+  font-size: 24px;
+  line-height:32px ;}
+
 }
+
 h6{
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 28px;
+  @include m.desktop{
+  font-size: 20px;
+  line-height:28px ;
+  }
 }
 p{
   font-size: 14px;
+  line-height:24px ;
+  @include m.desktop{
+  font-size: 16px;
+  line-height: 24px;
+  }
 }
 label{
+  font-size: 10px;
+  line-height: 20px;
+  @include m.desktop{
   font-size: 12px;
+  line-height:20px ;
+  }
 }
+
+
 
 
 /* make sure to set some focus styles for accessibility */
@@ -363,15 +409,7 @@ table {
 
 
 
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
 
 img {
   vertical-align: middle;
