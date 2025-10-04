@@ -14,6 +14,9 @@
 
 }
 .contact_container_h2{
+    width: 100%;
+       text-align: var(--app-text-align,center);
+       color:var( --Fonts-Paragraph);
     margin-bottom: 44px;
     @include m.desktop{
    margin-top: 12px;
@@ -41,9 +44,10 @@
     align-items: center;
     gap: 32px;
     font-weight: 500;
+      color:var( --Fonts-Paragraph);
 }
 .contact_item_icon{
-    
+         
     padding: 25px;
     background-color:var(--Primary-Default);
     border-radius: 50%;

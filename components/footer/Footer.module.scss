@@ -25,7 +25,7 @@
 .footer_navi {
   display: grid;
   gap: 32px;
-  color: #fff;
+ color: var(   --Fonts-Light);
   font-weight: 300;
   padding-bottom: 60px;
   grid-template-columns: repeat(1, 1fr); // mobile
@@ -44,7 +44,7 @@
 .footer_col {
   display: flex;
   flex-direction: column;
-
+    align-self: flex-start;
   gap: 16px;
   height: auto;
 
@@ -53,10 +53,11 @@
   }
   .link{
     display:inline-block;
-        align-self: flex-start;
+    align-self: flex-start;
+               text-align: var(--app-text-align,left);
     font-size: 16px;          
         line-height: 150%;
-     color: #fff;
+ color: var(   --Fonts-Light);
         text-decoration: none;
     &:hover{
       text-decoration: underline;
@@ -72,10 +73,10 @@
   margin: 0 auto;
   text-align: center;
   padding: 60px 0 60px;
-  border-top: #fff 1px solid;
+  border-top:  var(   --Fonts-Light) 1px solid;
   p{
     font-size:14px;
-     color: #fff;
+ color: var(   --Fonts-Light);
   }
 
 }

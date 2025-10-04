@@ -8,7 +8,7 @@
   justify-content: space-between;
   width: 100%;
   max-width: 100%;
-
+  background-color: var(--System-Colors-System-Light);
 
   gap: 16px;
   @include m.desktop {
@@ -50,7 +50,7 @@ height:250px;
   }
 }
 .card_text {
-
+   text-align: var(--app-text-align,left);
   max-width: 480px;
   display: flex;
   flex-direction: column;
@@ -58,22 +58,23 @@ height:250px;
   gap: 32px;
   padding: 16px;
   align-items: flex-start;
-  text-align: left;
+   color: var(  --Fonts-Dark);
   @include m.desktop {
     gap: 48px;
     align-items: flex-start;
-    text-align: left;
+
   }
 
   @include m.tablet {
     padding: 0;
     max-width:550px ;
-        
-        text-align: left;
-        .card_list{
-            text-align: left;
-        }
+
+
   }
+}
+.card_text_h2{
+   text-align: var(--app-text-align,left);
+   width: 100%;
 }
 
 .card_list {
@@ -83,4 +84,5 @@ height:250px;
   margin-left: 16px;
   gap: 8px;
   font-size: 14px;
+  width: 100%;
 }

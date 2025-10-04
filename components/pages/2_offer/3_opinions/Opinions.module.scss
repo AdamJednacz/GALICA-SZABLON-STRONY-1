@@ -47,7 +47,7 @@
   align-items: center;
   justify-content: center;
   transition: background 0.3s ease;
-
+         
   &:hover {
     background-color: var(--Primary-Disabled);
   }
@@ -79,9 +79,9 @@
   flex: 0 0 100%; // każdy slajd zajmuje 100% szerokości slidera
   background: var(--System-Colors-System-Light);
   padding: 32px;
- 
+ text-align: var(--app-text-align,left);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  text-align: left;
+
   display: flex;
   flex-direction: column;
   gap: 10px;

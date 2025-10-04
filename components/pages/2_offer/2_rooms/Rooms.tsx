@@ -40,7 +40,7 @@ const Rooms = () => {
     <div className={`container ${styles.rooms}`}>
       {roomsContent.map((content, index) => (
     <div className={styles.room_card} key={index}>
-  <h3 className={styles.room_card_h2}>{content.h3}</h3>
+  <h3 className={styles.room_card_h3}>{content.h3}</h3>
 
   <div className={styles.room_card_img}>
     <Image

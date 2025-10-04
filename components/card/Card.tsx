@@ -30,10 +30,10 @@ const Card: React.FC<CardProps> = ({ content, backgroundColor, noButton, classNa
   return (
     <div
       className={`container ${styles.card_container} ${className}`}
-      style={{ backgroundColor, ...style }}
+      style={{ ...style }}
     >
       <div className={styles.card_text}>
-        <h2>{h2}</h2>
+        <h2 className={styles.card_text_h2}>{h2}</h2>
         <p>{p}</p>
 
         {list && list.length > 0 && (

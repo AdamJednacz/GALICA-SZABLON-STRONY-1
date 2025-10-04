@@ -8,14 +8,13 @@
 }
 
 
-
 :root {
   --font-size: 16px;
   --line-height: 1.5;
   --paragraph-space: 0px;
   --letter-spacing: 0px;
   --word-space: 0px;
-  --app-font-family: "Poppins", sans-serif; // domyślna
+  --app-font-family:Inter, sans-serif; // domyślna
   --app-text-align: initial;
   --app-filter: contrast(100%);
   --animation:initial;
@@ -30,9 +29,39 @@
   --System-Colors-BG: #f7f7f7;
 --Fonts-Grey:#5E5E5E;
   --Primary-Disabled:#99B2D6;
-
-
+--Calendar-BG:#fff;
+--Cursor:unset
 }
+.help-line-cursor::before {
+  content: '';
+  position: fixed;
+top: var(--mouse-y, 0);
+  left: var(--mouse-x, 0);
+  width: 500px;
+  height: 10px; /* Wysokość linii */
+  background: url('./Icons/help_line.png') center/100% 100% no-repeat;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+body.help-mask::before{
+backdrop-filter: brightness(75%) !important;
+  width: 100%;
+  height: 100vh;
+}
+.help-mask::after {
+  content: '';
+  position: fixed;
+top: var(--mouse-y, 0);
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background: rgba(255,255,255,0);
+  pointer-events: none;
+  z-index: 1000000000;
+  backdrop-filter: brightness(125%) 
+}
+
 
 
 
@@ -60,7 +89,13 @@ body.no-animations [style*="transition"] {
 }
 
 
+body.big_black_cursor * {
+  cursor: url("./Icons/Vector_1.svg") 0 0, auto !important;
+}
 
+body.big_white_cursor * {
+  cursor: url("./Icons/Vector_2.svg") 0 0, auto !important;
+}
 
 body {
   font-family: var(--app-font-family)  !important;
@@ -71,8 +106,10 @@ body {
   transition: var(--animation) !important;
   text-align: var(--app-text-align) !important;
   background-color: var(--System-Colors-BG) !important;
+      
 }
-
+// D:\Praca\Strony\GALICA\GALICA-SZABLON-STRONY-1\galica-szablon-strony-1\components\AAA_button\Icons\
+//  var(--Cursor)!important;
 body::before {
   content: "";
   position: fixed;
@@ -81,6 +118,8 @@ body::before {
   pointer-events: none;
   background: rgba(255,255,255,0); // musi być "coś"
     backdrop-filter: var(--app-filter) !important;
+         cursor:url("./Icons/black_cursor_icon.svg") 0 0  auto, !important;
+      // cursor:url("./Icons/big_white_cursor.svg") 0 0 ,auto !important;
 }
 h1,h2,h3,h4,h5,h6,span,li{
   line-height: var(--line-height) !important;

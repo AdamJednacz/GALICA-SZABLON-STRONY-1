@@ -32,3 +32,8 @@ box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
       text-align: center;
       color: var(--Fonts-Light);
 }
+.hero_container_h1{
+  width: 100%;
+           text-align: var(--app-text-align,center);
+           color: var(  --System-Colors-System-Light);
+}

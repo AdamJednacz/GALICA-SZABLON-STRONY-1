@@ -1,16 +1,16 @@
 @use "../../styles/_variables.scss" as v;
 .small{
-  font-size: 12px;
+  font-size: 0.75em;
 
   padding: 7px 16px;
 }
 .medium{
-  font-size: 14px;
+  font-size: 0.875em;
 
   padding: 9px 16px;
 }
 .large{
-  font-size: 16px;
+  font-size: 1em;
   
   padding:  10px 20px ; 
 }

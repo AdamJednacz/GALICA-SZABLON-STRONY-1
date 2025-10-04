@@ -19,7 +19,7 @@ align-self: stretch;
 z-index: 1;
 border-radius: 50px;
 border: 1px solid #D8D8D8;
-background: #FFF;
+background: var(--Calendar-BG);
 box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     @include m.desktop{
         display: grid;
@@ -88,7 +88,7 @@ font-weight: 400;
   color: var(--Fonts-Grey, #5E5E5E);
 }
 .calendar_item_text_p{
-color: var(--Fonts-Dark, #03021E);
+color: var(--Fonts-Paragraph, #03021E);
 
 }
 
@@ -131,7 +131,7 @@ color: var(--Fonts-Dark, #03021E);
        width: 25px;
 }
 .people_counter{
-    color: #000;
+   color: var(--Fonts-Paragraph, #03021E); 
     display: flex;
     align-items: center;
  

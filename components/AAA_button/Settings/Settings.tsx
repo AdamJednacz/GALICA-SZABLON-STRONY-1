@@ -30,37 +30,106 @@ interface SettingsProps {
   open: boolean;
   onClose: () => void;
 }
+type CounterState = {
+        fontSize:number,
+      lineHeight: number,
+      paragraphSpace: number,
+      letterSpacing: number,
+      wordSpace: number,
+}
+type SlidesState = {
+  strongContrast: boolean;
+  inversion: boolean;
+  monochrome: boolean;
+  highContrast: boolean;
+  highSaturation: boolean;
+  lowSaturation: boolean;
+  textLeft: boolean;
+  textMid: boolean;
+  textRight: boolean;
+  readableFont: boolean;
+  dyslectickFont: boolean;
+  blackCursor: boolean;
+  whiteCursor: boolean;
+      helpLine: boolean,
+      helpMask: boolean,
+offAnimation:boolean,
+  mute: boolean;
+};
 
 const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
   const { setAnimationsOff } = useAccessibility();
   const [isMobile, setIsMobile] = useState(false);
-  const [counters, setCounters] = useState({
-    fontSize: 16,
-    lineHeight: 1.5,
-    paragraphSpace: 0,
-    letterSpacing: 0,
-    wordSpace: 0,
+ const [counters, setCounters] = useState<CounterState>(() => {
+    if (typeof window === "undefined") return {
+      fontSize: 16,
+      lineHeight: 1.5,
+      paragraphSpace: 0,
+      letterSpacing: 0,
+      wordSpace: 0,
+    };
+    const saved = localStorage.getItem("accessibilitySettings");
+    return saved ? JSON.parse(saved).counters : {
+      fontSize: 16,
+      lineHeight: 1.5,
+      paragraphSpace: 0,
+      letterSpacing: 0,
+      wordSpace: 0,
+    };
   });
 
-  const [slides, setSlides] = useState({
-    readableFont: false,
-    dyslectickFont: false,
-    textLeft: false,
-    textMid: false,
-    textRight: false,
-    strongContrast: false,
-    inversion: false,
-    monochrome: false,
-    highContrast: false,
-    highSaturation: false,
-    lowSaturation: false,
-    helpLine: false,
-    helpMask: false,
-    offAnimation: false,
-    mute: false,
-    blackCursor: false,
-    whiteCursor: false,
+  const [slides, setSlides] = useState<SlidesState>(() => {
+    if (typeof window === "undefined") return {
+      readableFont: false,
+      dyslectickFont: false,
+      textLeft: false,
+      textMid: false,
+      textRight: false,
+      strongContrast: false,
+      inversion: false,
+      monochrome: false,
+      highContrast: false,
+      highSaturation: false,
+      lowSaturation: false,
+      helpLine: false,
+      helpMask: false,
+      offAnimation: false,
+      mute: false,
+      blackCursor: false,
+      whiteCursor: false,
+    };
+    const saved = localStorage.getItem("accessibilitySettings");
+    return saved ? JSON.parse(saved).slides : {
+      readableFont: false,
+      dyslectickFont: false,
+      textLeft: false,
+      textMid: false,
+      textRight: false,
+      strongContrast: false,
+      inversion: false,
+      monochrome: false,
+      highContrast: false,
+      highSaturation: false,
+      lowSaturation: false,
+      helpLine: false,
+      helpMask: false,
+      offAnimation: false,
+      mute: false,
+      blackCursor: false,
+      whiteCursor: false,
+    };
   });
+
+  // 🔹 Auto-save do localStorage przy każdej zmianie
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    localStorage.setItem(
+      "accessibilitySettings",
+      JSON.stringify({ counters, slides })
+    );
+  }, [counters, slides]);
+
 
 
 
@@ -71,7 +140,7 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
     return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
 
-  const handleSlideChange = (id: keyof typeof slides, newValue: boolean) => {
+  const handleSlideChange = (id: keyof typeof slides,  newValue: boolean) => {
     const exclusiveFilters: (keyof typeof slides)[] = [
       "strongContrast",
       "inversion",
@@ -81,7 +150,6 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
       "lowSaturation",
     ];
 
-    // grupy wykluczające się (wyrównanie tekstu)
     if (["textLeft", "textMid", "textRight"].includes(id) && newValue) {
       setSlides((prev) => ({
         ...prev,
@@ -103,13 +171,31 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
       });
       return;
     }
+    if(["readableFont","dyslectickFont"].includes(id) && newValue){
+         setSlides((prev) => ({
+      ...prev,
+      readableFont: id === "readableFont",
+      dyslectickFont: id === "dyslectickFont",
+    }));
+    return;
+    }
 
+     if (["blackCursor", "whiteCursor"].includes(id) && newValue) {
+    setSlides((prev) => ({
+      ...prev,
+      blackCursor: id === "blackCursor",
+      whiteCursor: id === "whiteCursor",
+    }));
+    return;
+  }
     // pozostałe opcje
     setSlides((prev) => ({
       ...prev,
       [id]: newValue,
     }));
   };
+
+   
 
   const handleCounterChange = (id: keyof typeof counters, newValue: number) => {
     setCounters((prev) => ({
@@ -125,8 +211,10 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
     // czcionki
     if (slides.readableFont) {
       root.style.setProperty("--app-font-family", "Arial, sans-serif");
+      console.log(123)
     } else if (slides.dyslectickFont) {
       root.style.setProperty("--app-font-family", '"OpenDyslexic", Arial, sans-serif');
+    
     } else {
       root.style.removeProperty("--app-font-family");
     }
@@ -152,8 +240,9 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
     root.style.setProperty("--System-Colors-System-Light", "#fff");
     root.style.setProperty("--System-Colors-System-Dark", "#d9d9d9");
     root.style.setProperty("--System-Colors-BG", "#f7f7f7"); // ⬅ jedno źródło tła
-
-    // 🔹 tryby specjalne
+    root.style.setProperty("--Primary-Default-Slide", "#1b53a5"); // ⬅ jedno źródło tła
+    root.style.setProperty("--Cursor","url('./Icons/black_cursor_icon.svg') 0 0,auto");
+   root.style.setProperty("--Calendar-BG","#fff")
     if (slides.strongContrast) {
       root.style.setProperty("--Fonts-Light", "#000");
       root.style.setProperty("--Fonts-Paragraph", "yellow");
@@ -164,7 +253,9 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
       root.style.setProperty("--System-Colors-System-Light", "yellow");
       root.style.setProperty("--System-Colors-System-Dark", "#000");
       root.style.setProperty("--System-Colors-BG", "#0d0800");
+      root.style.setProperty("--Calendar-BG","#000")
       root.style.removeProperty("--app-filter");
+       root.style.setProperty("--Primary-Default-Slide", "#000");
     } else if (slides.inversion) {
       root.style.setProperty("--app-filter", "invert(100%)");
     } else if (slides.monochrome) {
@@ -199,7 +290,116 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
     } else {
       document.body.classList.remove("help-mask");
     }
+
+
+    if(slides.blackCursor){
+          document.body.classList.add("big_black_cursor");
+          document.body.classList.remove("big_white_cursor");
+    }else if(slides.whiteCursor) {
+     document.body.classList.add("big_white_cursor");
+          document.body.classList.remove("big_black_cursor");
+   
+    }else{
+    document.body.classList.remove("big_white_cursor");
+        document.body.classList.remove("big_black_cursor");
+  }
+  
+
   }, [slides,setAnimationsOff]);
+
+useEffect(() => {
+  const root = document.documentElement;
+
+  if (!slides.helpLine) {
+    root.style.removeProperty('--mouse-x');
+    root.style.removeProperty('--mouse-y');
+    return;
+  }
+
+  document.body.classList.add("help-line-cursor");
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  const speed = 0.1; // 0 < speed < 1, im mniejsze, tym płynniej
+
+  const handleMouseMove = (e: MouseEvent) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  };
+
+  document.addEventListener("mousemove", handleMouseMove);
+
+  const animate = () => {
+    currentX += (mouseX - currentX) * speed;
+    currentY += (mouseY - currentY) * speed;
+
+    // kursor na środku linii
+    root.style.setProperty('--mouse-x', `${currentX - 250}px`); // 500px szerokości, dzielimy na 2
+    root.style.setProperty('--mouse-y', `${currentY - 5}px`);   // 10px wysokości, dzielimy na 2
+
+    requestAnimationFrame(animate);
+  };
+
+  const animationFrame = requestAnimationFrame(animate);
+
+  return () => {
+    document.removeEventListener("mousemove", handleMouseMove);
+    document.body.classList.remove("help-line-cursor");
+    root.style.removeProperty('--mouse-x');
+    root.style.removeProperty('--mouse-y');
+    cancelAnimationFrame(animationFrame);
+  };
+}, [slides.helpLine]);
+
+
+useEffect(() => {
+  const root = document.documentElement;
+
+  if (!slides.helpMask) {
+ 
+    root.style.removeProperty('--mouse-y');
+    return;
+  }
+
+  document.body.classList.add("help-mask");
+
+
+  let mouseY = 0;
+
+  let currentY = 0;
+  const speed = 0.1; // 0 < speed < 1, im mniejsze, tym płynniej
+
+  const handleMouseMove = (e: MouseEvent) => {
+
+    mouseY = e.clientY;
+  };
+
+  document.addEventListener("mousemove", handleMouseMove);
+
+  const animate = () => {
+ 
+    currentY += (mouseY - currentY) * speed;
+
+    
+    root.style.setProperty('--mouse-y', `${currentY -50}px`);   // 10px wysokości, dzielimy na 2
+
+    requestAnimationFrame(animate);
+  };
+
+  const animationFrame = requestAnimationFrame(animate);
+
+  return () => {
+    document.removeEventListener("mousemove", handleMouseMove);
+    document.body.classList.remove("help-mask");
+
+    root.style.removeProperty('--mouse-y');
+    cancelAnimationFrame(animationFrame);
+  };
+}, [slides.helpMask]);
+
+
 
   // 🔹 aktualizacja font-size, spacing itd.
   useEffect(() => {
@@ -341,8 +541,10 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
           </>
         )}
       </div>
+      
     </div>
   );
 };
 
 export default Settings;
+

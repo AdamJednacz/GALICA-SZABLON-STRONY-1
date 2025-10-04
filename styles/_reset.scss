@@ -18,11 +18,11 @@ time, mark, audio, video,span {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: var(--font-size);
   font: inherit;
   vertical-align: baseline;
-  // font-family: Poppins , sans-serif;
- font-family:Inter, sans-serif;
+
+
 
 }
 img{
@@ -35,70 +35,75 @@ h1,h2,h3,h4,h5,h6,p,label{
 }
 
 
-h1{
-  font-size: 36px;
-  line-height: 56px;
-  @include m.desktop{
-  font-size: 48px;
-  line-height: 64px;
+h1 {
+  font-size: 2.25em;    // 36px / 16
+  line-height: 3.5em;   // 56px / 16
+  @include m.desktop {
+    font-size: 3em;     // 48px / 16
+    line-height: 4em;   // 64px / 16
   }
-}
-h2{
-  font-size: 32px;
-  line-height:48px ;
-  @include m.desktop{
-  font-size: 40px;
-  line-height:48px ;
-  }
-
-}
-h3{
-  font-size: 28px;
-  line-height: 44px;
-  @include m.desktop{
-  font-size: 36px;
-  line-height: 44px;
-  }
-}
-h4{
-  font-size: 24px;
-  line-height: 40px;
-  @include m.desktop{
-  font-size: 32px;
-  line-height: 40px;
-  }
-}
-h5{
-  font-size: 20px;
-  line-height: 32px;
-  @include m.desktop{
-  font-size: 24px;
-  line-height:32px ;}
-
 }
 
-h6{
-  font-size: 16px;
-  line-height: 28px;
-  @include m.desktop{
-  font-size: 20px;
-  line-height:28px ;
+h2 {
+  font-size: 2em;       // 32px / 16
+  line-height: 3em;     // 48px / 16
+  @include m.desktop {
+    font-size: 2.5em;   // 40px / 16
+    line-height: 3em;   // 48px / 16
   }
 }
-p{
-  font-size: 14px;
-  line-height:24px ;
-  @include m.desktop{
-  font-size: 16px;
-  line-height: 24px;
+
+h3 {
+  font-size: 1.75em;    // 28px / 16
+  line-height: 2.75em;  // 44px / 16
+  @include m.desktop {
+    font-size: 2.25em;  // 36px / 16
+    line-height: 2.75em; // 44px / 16
   }
 }
-label{
-  font-size: 10px;
-  line-height: 20px;
-  @include m.desktop{
-  font-size: 12px;
-  line-height:20px ;
+
+h4 {
+  font-size: 1.5em;     // 24px / 16
+  line-height: 2.5em;   // 40px / 16
+  @include m.desktop {
+    font-size: 2em;     // 32px / 16
+    line-height: 2.5em; // 40px / 16
+  }
+}
+
+h5 {
+  font-size: 1.25em;    // 20px / 16
+  line-height: 2em;     // 32px / 16
+  @include m.desktop {
+    font-size: 1.5em;   // 24px / 16
+    line-height: 2em;   // 32px / 16
+  }
+}
+
+h6 {
+  font-size: 1em;       // 16px / 16
+  line-height: 1.75em;  // 28px / 16
+  @include m.desktop {
+    font-size: 1.25em;  // 20px / 16
+    line-height: 1.75em; // 28px / 16
+  }
+}
+
+p {
+  font-size: 0.875em;   // 14px / 16
+  line-height: 1.5em;   // 24px / 16
+  @include m.desktop {
+    font-size: 1em;     // 16px / 16
+    line-height: 1.5em; // 24px / 16
+  }
+}
+
+label {
+  font-size: 0.625em;   // 10px / 16
+  line-height: 1.25em;  // 20px / 16
+  @include m.desktop {
+    font-size: 0.75em;  // 12px / 16
+    line-height: 1.25em; // 20px / 16
   }
 }
 
