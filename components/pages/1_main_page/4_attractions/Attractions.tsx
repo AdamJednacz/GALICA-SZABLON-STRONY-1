@@ -1,6 +1,6 @@
 import Card, { CardContent } from "../../../card/Card"
 import styles from "./Attractions.module.scss"
-
+import styles_2 from "../../../card/Card.module.scss"
 
 const content :CardContent = {
     h2: "Atrakcje, które czekają na Ciebie",
@@ -10,12 +10,13 @@ const content :CardContent = {
     buttonColor:"white",
     imgSrc: "/attractions.jpg",
     imgAlt: "Zdjęcie pokoju",
+    
   }
 
 const Attractions = () => {
   return (
     <section className={styles.attractions}>
-        <Card  content={content}/>
+        <Card className={styles_2.card_container_primary}  content={content}/>
         </section>
   )
 }

@@ -1,5 +1,13 @@
 @use "styles/_mixins.scss" as m;
 
+.card_container_primary {
+  background-color: var(--Primary-Default)!important;
+
+  .card_text{
+       color: var(  --Fonts-Light);
+  }
+}
+
 .card_container {
   display: flex;
   flex-wrap: wrap-reverse;
