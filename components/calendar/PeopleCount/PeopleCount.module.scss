@@ -1,0 +1,19 @@
+
+.people_count{
+    font-size: 24px;
+    margin: 0 8px;
+       width: 25px;
+}
+.people_counter{
+   color: var(--Fonts-Paragraph, #03021E); 
+    display: flex;
+    align-items: center;
+ 
+  
+}
+.people_plus , .people_minus {
+    cursor: pointer;
+    display: block;
+    padding: 4px;
+   
+}

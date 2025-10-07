@@ -1,0 +1,81 @@
+.datepicker {
+  user-select: none;
+  background-color: var(--System-Colors-BG);
+  color: var(  --Fonts-Paragraph);
+
+
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+    font-weight: bold;
+  button {
+   
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    
+     
+    &:hover {
+      background-color: #f0f0f0;
+    }
+    svg{
+        fill: var(  --Fonts-Paragraph);
+    }
+  }
+}
+
+.months {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  
+
+}
+
+.month {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  padding: 10px;
+  .month-header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 55px);
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  .days {
+    display: grid;
+    grid-template-columns: repeat(7, 55px);
+    text-align: center;
+
+    .day {
+      width: 55px;
+      height: 40px;
+      line-height: 40px;
+      cursor: pointer;
+      &.selected {
+        background-color: var(--Primary-Default);
+        color: var(  --Fonts-Light);
+      }
+      &.disabled {
+
+        cursor: not-allowed;
+      }
+      &:hover{
+        background-color: var(--Primary-Default);
+            color: var(  --Fonts-Light);
+      }
+    }
+  }
+}

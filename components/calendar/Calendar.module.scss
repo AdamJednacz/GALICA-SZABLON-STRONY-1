@@ -32,6 +32,8 @@ max-width: 60%;
     }
 }
 
+
+
 .calendar_item{
     display: flex;
     align-items: center;
@@ -94,52 +96,4 @@ color: var(--Fonts-Paragraph, #03021E);
 
 .icon{
     margin-left: 16px;
-}
-.popup {
-  position: absolute;
-  bottom: 100%; // nad elementem
-
-  transform: translateY(-10px);
-  background: #fff;
-  border: 1px solid #d8d8d8;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  border-radius: 12px;
-  padding: 16px;
-  z-index: 10;
-  min-width: 250px;
-    &::after {
-    content: "";
-    position: absolute;
-    top: 100%; // na dole popupu
-    left: 40px; // możesz wyregulować żeby wskazywał na środek elementu
-    border-width: 8px;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent; // biały trójkąt
-  }
-}
-.popup_arival{
-  left: 0;
-}
-.popup_decapture{
-  left: 25%;
-}
-
-
-.people_count{
-    font-size: 24px;
-    margin: 0 8px;
-       width: 25px;
-}
-.people_counter{
-   color: var(--Fonts-Paragraph, #03021E); 
-    display: flex;
-    align-items: center;
- 
-  
-}
-.people_plus , .people_minus {
-    cursor: pointer;
-    display: block;
-    padding: 4px;
-   
 }
