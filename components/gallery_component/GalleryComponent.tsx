@@ -40,6 +40,7 @@ const GalleryComponent: React.FC<GalleryProps> = ({
       </div>
 
       {!noButton && buttonText && (
+        <div className={styles.gallery_button}>
         <Button
           to={buttonLink}
           color={buttonColor}
@@ -49,6 +50,7 @@ const GalleryComponent: React.FC<GalleryProps> = ({
         >
           {buttonText}
         </Button>
+        </div>
       )}
     </div>
   )

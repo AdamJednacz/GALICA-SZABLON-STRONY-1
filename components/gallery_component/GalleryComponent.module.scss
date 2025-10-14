@@ -6,15 +6,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
- margin: 48px 0;
+
     width: 100%;
-    @include m.desktop{
- margin: 64px 0;
-    }
+  
    
 }
 
+.gallery_button{
+   margin: 32px 0;
+    @include m.desktop{
+ margin: 32px 0;
+    }
 
+}
 .gallery_container {
   width: 100%;
   display: grid;
