@@ -19,6 +19,8 @@
   background: var(--System-Colors-System-Light);
   padding: 16px 20px;
   border-radius: 50px;
+           text-align: var(--app-text-align,left);
+  border: none;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   cursor: pointer;
   transition: all 0.3s ease;

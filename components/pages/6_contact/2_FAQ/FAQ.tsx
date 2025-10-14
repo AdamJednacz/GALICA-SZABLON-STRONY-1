@@ -51,12 +51,10 @@ const FAQ = () => {
       <section className={styles.faq}>
         <ul className={`container ${styles.faq_container}`}>
           {data.map((item, index) => (
-            <li
-          
+            <button
+              tabIndex={1}
               key={index}
 
- 
-             
               className={`${styles.question_card} ${
                 openIndex === index ? styles.active : ""
               }`}
@@ -77,7 +75,7 @@ const FAQ = () => {
               >
                 <p>{item.answer}</p>
               </div>
-            </li>
+            </button>
           ))}
         </ul>
       </section>
