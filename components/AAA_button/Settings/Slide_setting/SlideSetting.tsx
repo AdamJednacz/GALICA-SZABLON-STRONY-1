@@ -23,17 +23,17 @@ type SlideKeys =
 export interface SlideSettingType {
   id: SlideKeys;
   src: string;
-  alt: string;
+ 
   description: string;
   value: boolean;
   onChange: (id: SlideKeys, newValue: boolean) => void;
   tabIndex: number;
 }
 
-const SlideSetting: React.FC<SlideSettingType> = ({ id, src, alt, description, value, onChange ,tabIndex}) => {
+const SlideSetting: React.FC<SlideSettingType> = ({ id, src,  description, value, onChange ,tabIndex}) => {
   return (
     <div className={styles.slide_setting}>
-      <Image width={24} height={24} className={styles.slide_setting_icon} src={src} alt={alt} />
+      <Image width={24} height={24} className={styles.slide_setting_icon} src={src} alt="" />
 
       <label
            tabIndex={tabIndex}

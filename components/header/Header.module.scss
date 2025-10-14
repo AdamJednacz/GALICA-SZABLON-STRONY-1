@@ -80,6 +80,7 @@ background: var(--System-Colors-System-Light, #FFF);
   @include m.desktop{
     position: unset;
     transform: translateY(0);
+    background: none;
     display: flex;
     flex-direction: row;
     border-radius: 50px;

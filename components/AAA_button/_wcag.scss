@@ -6,32 +6,24 @@
   font-weight: normal;
   font-style: normal;
 }
+body.strong-contrast {
 
 
-:root {
-  --font-size: 16px;
-  --line-height: 1.5;
-  --paragraph-space: 0px;
-  --letter-spacing: 0px;
-  --word-space: 0px;
-  --app-font-family:Inter, sans-serif; // domyślna
-  --app-text-align: initial;
-  --app-filter: contrast(100%);
-  --animation:initial;
-
-
-   --Fonts-Light: #fff;
-  --Fonts-Paragraph: #111418;
-  --Fonts-Dark: #03021e;
-  --Primary-Default: #1b53a5;
-  --System-Colors-System-Light: #fff;
-  --System-Colors-System-Dark: #d9d9d9;
-  --System-Colors-BG: #f7f7f7;
---Fonts-Grey:#5E5E5E;
-  --Primary-Disabled:#99B2D6;
---Calendar-BG:#fff;
---Cursor:unset
+  --Primary-Default-Slide:#000;
+  --Fonts-Light: #000;
+  --Fonts-Paragraph: yellow;
+  --Fonts-Dark: #000;
+  --Primary-Default: yellow;
+  --System-Colors-System-Light: yellow;
+  --System-Colors-System-Dark: yellow;
+  
+  --System-Colors-BG: #000;
+  --Fonts-Grey:#5E5E5E;
+  --Primary-Disabled:grey;
+--Calendar-BG:#000;
 }
+
+
 .help-line-cursor::before {
   content: '';
   position: fixed;

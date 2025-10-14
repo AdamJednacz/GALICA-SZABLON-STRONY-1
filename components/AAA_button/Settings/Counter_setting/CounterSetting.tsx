@@ -6,7 +6,7 @@ type CounterKeys = "fontSize" | "lineHeight" | "paragraphSpace" | "letterSpacing
 export interface CounterSettingType {
    id: CounterKeys;
   src: string;
-  alt: string;
+
   description: string;
   value: number;
   onChange: (id: CounterKeys, newValue: number) => void;
@@ -19,7 +19,7 @@ export interface CounterSettingType {
 const CounterSetting: React.FC<CounterSettingType> = ({
   id,
   src,
-  alt,
+
   description,
   value,
   onChange,
@@ -41,7 +41,7 @@ const CounterSetting: React.FC<CounterSettingType> = ({
   return (
     <div className={styles.counter_setting}>
        <div className={styles.counter_setting_container}>
-      <Image width={24} height={24} className={styles.counter_setting_icon} src={src} alt={alt} />
+      <Image width={24} height={24} className={styles.counter_setting_icon} src={src} alt="" />
       <div className={styles.counter_setting_value}>{value}</div>
       <button tabIndex={tabIndex} className={styles.counter_setting_button} onClick={increase}>
         <Image width={24} height={24} className={styles.counter_setting_button_icon} src={up} alt="" />
