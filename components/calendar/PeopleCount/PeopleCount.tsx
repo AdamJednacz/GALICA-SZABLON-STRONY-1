@@ -1,4 +1,4 @@
-import React, { Dispatch } from 'react'
+
 import styles_2 from "./PeopleCount.module.scss"
 import styles_1 from "../Calendar.module.scss"
 export interface PeopleCountState{

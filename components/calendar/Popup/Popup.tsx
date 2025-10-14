@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "./Popup.module.scss"
-import DatePicker from '../CalendarItem/DatePicker/DatePicker'
+import DatePicker from './DatePicker/DatePicker'
+
 
 const Popup = () => {
     
@@ -12,10 +13,9 @@ const Popup = () => {
           className={`${styles.popup} `}
                     onClick={(e) => e.stopPropagation()}
         >
-            
-                
+           
                     <DatePicker/>
-          
+       
         </div>
 
       </>

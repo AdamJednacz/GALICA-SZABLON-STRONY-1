@@ -1,15 +1,16 @@
-import React from 'react'
+import React from "react";
+import styles from "./BookingEngine.module.scss";
 
-import styles from "./BookingEngine.module.scss"
-const BookingEngine = () => {
+const BookingEngine = ({ url }: { url: string }) => {
   return (
     <div className={styles.booking_engine}>
-    <iframe
-      src="https://be.guestsage.com/pl/048bbae8-1844-4bfc-b70c-15b2b9762c80"
-    className={styles.booking_engine_iframe}
-    />
+      <iframe
+        src={url}
+        className={styles.booking_engine_iframe}
+        loading="lazy"
+      />
     </div>
-  )
-}
+  );
+};
 
-export default BookingEngine
+export default BookingEngine;

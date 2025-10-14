@@ -1,7 +1,9 @@
+"use client"
 import Image from "next/image";
 import styles from "./CounterSetting.module.scss"
 import up from "../../Icons/up.svg";
 import bottom from "../../Icons/bottom.svg";
+import { useEffect, useState } from "react";
 type CounterKeys = "fontSize" | "lineHeight" | "paragraphSpace" | "letterSpacing" | "wordSpace";
 export interface CounterSettingType {
    id: CounterKeys;
@@ -28,6 +30,8 @@ const CounterSetting: React.FC<CounterSettingType> = ({
   step = 1,
   tabIndex
 }) => {
+
+  const [mounted, setMounted] = useState(false);
   const increase = () => {
     const newValue = Math.min(value + step, max);
     onChange(id, Number(newValue.toFixed(2))); // żeby np. 1.7999999 → 1.8
@@ -38,6 +42,8 @@ const CounterSetting: React.FC<CounterSettingType> = ({
     onChange(id, Number(newValue.toFixed(2)));
   };
 
+  useEffect(() => setMounted(true), []);
+    if (!mounted) return null;
   return (
     <div className={styles.counter_setting}>
        <div className={styles.counter_setting_container}>

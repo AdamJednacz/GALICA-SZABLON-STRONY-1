@@ -58,7 +58,7 @@
     display: grid;
     grid-template-columns: repeat(7, 55px);
     text-align: center;
-
+    gap: 4px;
     .day {
       width: 55px;
       height: 40px;
@@ -69,7 +69,8 @@
         color: var(  --Fonts-Light);
       }
       &.disabled {
-
+           background-color: var(  --Primary-Disabled);
+           color: grey;
         cursor: not-allowed;
       }
       &:hover{

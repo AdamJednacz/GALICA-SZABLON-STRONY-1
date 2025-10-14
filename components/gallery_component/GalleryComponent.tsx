@@ -45,6 +45,7 @@ const GalleryComponent: React.FC<GalleryProps> = ({
           color={buttonColor}
           size={buttonSize}
           rounded={buttonRounded}
+          
         >
           {buttonText}
         </Button>
