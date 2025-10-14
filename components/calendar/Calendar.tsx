@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Button from "../button/Button";
 import PeopleCount from "./PeopleCount/PeopleCount";
 import CalendarItem from "./CalendarItem/CalendarItem";
@@ -28,10 +28,38 @@ const Calendar = ({ active, setActive }: CalendarProps) => {
   const decrementPeople = () => setPeopleCount((prev) => (prev > 1 ? prev - 1 : 1));
   const handleSetActive = () => setActive(!active);
 
-  
+    const [windowWidth, setWindowWidth] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setWindowWidth(width);
+      setIsMobile(width < 768); // Przykład — mobile < 768px
+    };
+
+    handleResize(); // uruchom od razu przy montowaniu
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
-    <div className={styles.calendar}>
+  <>
+     { isMobile ? (
+        <div className={styles.calendar}>
+ <Button
+  to={`/zarezerwuj`}
+  size="large"
+  color="primary"
+  rounded="rounded"
+>
+  Zarezerwuj
+</Button>
+   </div>
+      ):(
+      <div className={styles.calendar}>
       <CalendarItem  handleSetActive={handleSetActive} p_text="Przyjazd" description={`${range.from === null ? "Data przyjazdu"    : formatDate(range.from)}`} />
       <CalendarItem  handleSetActive={handleSetActive} p_text="Wyjazd" description={`${range.to === null ? "Data wyjazdu"   : formatDate(range.to) }`} />
 
@@ -45,7 +73,10 @@ const Calendar = ({ active, setActive }: CalendarProps) => {
 >
   Zarezerwuj
 </Button>
-    </div>
+   </div>
+      )}
+
+ </>
   );
 };
 

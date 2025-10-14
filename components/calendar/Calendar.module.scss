@@ -2,31 +2,38 @@
 @use "../../styles/variables" as v;
 
 .calendar{
-    display: none;
+ 
     position: absolute;
 width: 100%;
 bottom: 0%;
 left: 50%;
 transform: translate(-50%,-50%);
 color: #fff;
-border: 1px solid red;
+
 
 grid-template-columns: repeat(4, 1fr);
-padding: 10px 10px 10px 40px;
+
 
 gap: 72px;
 align-self: stretch;
 z-index: 1;
 border-radius: 50px;
-border: 1px solid #D8D8D8;
-background: var(--Calendar-BG);
-box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-    @include m.desktop{
-        display: grid;
 
+
+
+    @include m.desktop{
+        padding: 10px 10px 10px 40px;
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+        display: grid;
+background: var(--Calendar-BG);
+border: 1px solid #D8D8D8;
 max-width: 60%;
     }
     @include m.tablet{
+        padding: 10px 10px 10px 40px;
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+        border: 1px solid #D8D8D8;
+        background: var(--Calendar-BG);
         display: grid;
      
     }
