@@ -36,8 +36,9 @@ top: var(--mouse-y, 0);
   z-index: 9999;
 }
 
+
 body.help-mask::before{
-backdrop-filter: brightness(75%) !important;
+  background: rgba(0,0,0,0.5);
   width: 100%;
   height: 100vh;
 }
@@ -48,10 +49,10 @@ top: var(--mouse-y, 0);
   left: 0;
   height: 100px;
   width: 100%;
-  background: rgba(255,255,255,0);
+  background: transparent;
   pointer-events: none;
   z-index: 1000000000;
-  backdrop-filter: brightness(125%) 
+  backdrop-filter: brightness(200%) 
 }
 
 

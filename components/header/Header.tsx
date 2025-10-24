@@ -1,11 +1,13 @@
 "use client"
 
 import Link from "next/link";
-import Image from "next/image";
+
 import Button from "../button/Button";
 import styles from "./Header.module.scss";
 import { useState } from "react";
 import Button_3A from "../AAA_button/Button_3A";
+import Logo from "../logo/Logo";
+
 
 const navSections = [
   { id: "/", label: "Strona Główna", href: "/" },
@@ -24,17 +26,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={`${styles.header_items} container`}>
-        <Link href="/" className={styles.logo}>
-          <Image
-            loading="lazy"
-            width={70}
-            height={50}
-            style={{ marginRight: "8px" ,color:"#000"}}
-            src="/"
-            alt="LOGO"
-          />
-   
-        </Link>
+      <Logo color="#000"/>
 
         <nav className={`${styles.nav} ${isOpen ? styles.open : ""}`}>
           {navSections.map((section) => (
@@ -42,6 +34,7 @@ const Header = () => {
               key={section.label}
               href={section.href}
               className={styles.nav_item}
+           
             >
               {section.label}
             </Link>

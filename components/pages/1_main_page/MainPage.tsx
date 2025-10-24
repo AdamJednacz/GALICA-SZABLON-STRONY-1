@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Hero from './1_hero/Hero'
 import Offer from './2_offer/Offer'

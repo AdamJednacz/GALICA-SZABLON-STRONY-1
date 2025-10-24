@@ -44,7 +44,7 @@ const roomsData: Record<string, CardContent> = {
   "pokoj-1": {
     h2: "Pokój 1-osobowy",
     p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velit.feugiat amet purus cras sit velit. Quis senectus neque dictum bibendum orci. Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Pokój zawiera",
-    buttonLink: "/rooms",
+     buttonLink: "/zarezerwuj",
     buttonText: "Zarezerwuj pokój",
     buttonColor: "primary",
     imgSrc: "/pokoj_1.jpg",
@@ -54,7 +54,7 @@ const roomsData: Record<string, CardContent> = {
   "pokoj-2": {
     h2: "Pokój 2-osobowy",
     p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velitfeugiat amet purus cras sit velit. Quis senectus neque dictum bibendum orci. Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Pokój zawiera.",
-    buttonLink: "/rooms",
+    buttonLink: "/zarezerwuj",
     buttonText: "Zarezerwuj pokój",
     buttonColor: "primary",
     imgSrc: "/pokoj_2.jpg",
@@ -64,7 +64,7 @@ const roomsData: Record<string, CardContent> = {
   "pokoj-3": {
     h2: "Pokój 3-osobowy",
     p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velitfeugiat amet purus cras sit velit. Quis senectus neque dictum bibendum orci. Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Pokój zawiera.",
-    buttonLink: "/rooms",
+     buttonLink: "/zarezerwuj",
     buttonText: "Zarezerwuj pokój",
     buttonColor: "primary",
     imgSrc: "/pokoj_3.jpg",

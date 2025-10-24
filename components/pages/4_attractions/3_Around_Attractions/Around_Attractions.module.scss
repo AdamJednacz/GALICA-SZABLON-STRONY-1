@@ -21,7 +21,7 @@
      text-align: var(--app-text-align, left);
           color: var(--Fonts-Paragraph);
     @include m.desktop{
-        margin: 120px 0;
+         margin: 80px auto;
     }
 }
 

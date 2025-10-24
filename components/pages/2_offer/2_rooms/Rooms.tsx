@@ -26,7 +26,7 @@ const roomsContent = [
   {
     h3: "Pokój 3",
     p: "Lorem ipsum dolor sit amet consectetur. In placerat vel lectus quis nunc. Est tincidunt proin faucibus non lacus. Lacinia nunc ullamcorper feugiat amet purus cras sit velit.",
-    buttonLink: "oferta/pokoj-3",
+    buttonLink: "zarezerwuj",
     buttonText: "Zarezerwuj pokój",
     buttonColor: "primary",
     imgSrc: "/pokoj_3.jpg",

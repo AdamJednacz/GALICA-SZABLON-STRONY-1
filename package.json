@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@geist-ui/icons": "^1.0.2",
     "next": "15.5.2",
     "react": "19.1.0",
     "react-datepicker": "^8.7.0",

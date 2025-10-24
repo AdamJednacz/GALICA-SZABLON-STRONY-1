@@ -1,21 +1,13 @@
 import styles from "./Footer.module.scss";
 import Image from "next/image";
 import Link from "next/link"; // 🔹 import Link
+import Logo from "../logo/Logo";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className="container">
-        <Link href="/" className={styles.logo}>
-          <Image
-            loading="lazy"
-            style={{ marginRight: "8px" }}
-            src="/GALICA.png"
-            alt="logo"
-            width={120}
-            height={40}
-          />
-        </Link>
+        <Logo color="#fff"/>
 
         <div className={styles.footer_navi}>
           <div className={styles.footer_col}>
