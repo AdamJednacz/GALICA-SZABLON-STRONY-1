@@ -182,6 +182,11 @@ useEffect(() => { if (typeof window === "undefined") return; localStorage.setIte
         } else if (["blackCursor", "whiteCursor"].includes(id) && newValue) {
           updated.blackCursor = id === "blackCursor";
           updated.whiteCursor = id === "whiteCursor";
+        }
+          else if (["helpMask", "helpLine"].includes(id) && newValue) {
+          updated.helpLine = id === "helpLine";
+          updated.helpMask = id === "helpMask";
+        
         } else if (exclusiveFilters.includes(id)) {
           exclusiveFilters.forEach((filter) => {
             updated[filter] = filter === id ? newValue : false;
@@ -294,12 +299,13 @@ useMouseFollower(slides.helpLine, 5, 250);
           value={counters.fontSize}
           onChange={handleCounterChange}
           tabIndex={tabIndex}
+               min={16} max={20} step={1}
         />
       </div>
 
       <div className={styles.settings_row}>
         <h4 className={styles.settings_elements}>Ustawienia tekstu</h4>
-        <CounterSetting id="lineHeight" src={LineHeightIcon} description="Odstęp między wierszami" value={counters.lineHeight} onChange={handleCounterChange} min={1.5} max={2.5} step={0.1} tabIndex={tabIndex} />
+        <CounterSetting id="lineHeight"  src={LineHeightIcon} description="Odstęp między wierszami" value={counters.lineHeight} onChange={handleCounterChange} min={1.5} max={2.5} step={0.1} tabIndex={tabIndex} />
         <CounterSetting id="paragraphSpace" src={ParagraphSpaceIcon} description="Odstęp między paragrafami" value={counters.paragraphSpace} onChange={handleCounterChange} tabIndex={tabIndex} />
         <CounterSetting id="letterSpacing" src={LetterSpacingIcon} description="Odstęp między literami" value={counters.letterSpacing} onChange={handleCounterChange} tabIndex={tabIndex} />
         <CounterSetting id="wordSpace" src={WordSpaceIcon} description="Odstęp między słowami" value={counters.wordSpace} onChange={handleCounterChange} tabIndex={tabIndex} />
